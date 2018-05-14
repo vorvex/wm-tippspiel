@@ -2,16 +2,7 @@ class Team < ApplicationRecord
   belongs_to :group
   belongs_to :round
   
-  COUNTRY_IMAGES = "/images/flags/"
-  
-  named_scope :still_in, :conditions => "status = 'in'"
-  named_scope :already_out, :conditions => "status = 'out'"
-  
-end
 
-  def flag_url
-    COUNTRY_IMAGES + read_attribute(:flag_url) + ".png"
-  end
 
 
   def self.countries
@@ -33,4 +24,5 @@ end
   def increase_losses_by(value)
     self.losses += value
   end
+  
 end

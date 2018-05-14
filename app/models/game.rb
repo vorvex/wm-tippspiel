@@ -9,7 +9,6 @@ class Game < ApplicationRecord
   belongs_to :team_one, :class_name => "Team", :foreign_key => "team_one"
   belongs_to :team_two, :class_name => "Team", :foreign_key => "team_two"
   
-  named_scope :finished, :conditions => ["status = ?", "finished"]
   
   def teams
     [team_one, team_two]
