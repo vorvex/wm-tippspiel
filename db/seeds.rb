@@ -79,14 +79,14 @@ stadia = Stadium.create!([
 #Spiele Runde 1
 #Gruppe A
 
-game = Game.new( :gametime => '2018-06-14T17:00:00Z' )
+game = Game.new( :gametime => '2018-06-14T17:00:00' )
 game.stadium = Stadium.find_by_city('Moskau (Luschniki)')
 game.team_one = A1
 game.team_two = A2
 game.group = gruppe_a
 game.save!
 
-game = Game.new( :gametime => '2018-06-15T14:00:00Z' )
+game = Game.new( :gametime => '2018-06-15T14:00:00' )
 game.stadium = Stadium.find_by_city('Jekaterinburg')
 game.team_one = A3
 game.team_two = A4
@@ -95,14 +95,14 @@ game.save!
 
 #Gruppe B
 
-game = Game.new( :gametime => '2018-06-15T20:00:00Z' )
+game = Game.new( :gametime => '2018-06-15T20:00:00' )
 game.stadium = Stadium.find_by_city('Sotschi')
 game.team_one = B1
 game.team_two = B2
 game.group = gruppe_b
 game.save!
 
-game = Game.new( :gametime => '2018-06-15T17:00:00Z' )
+game = Game.new( :gametime => '2018-06-15T17:00:00' )
 game.stadium = Stadium.find_by_city('Sankt Petersburg')
 game.team_one = B3
 game.team_two = B4
@@ -111,14 +111,14 @@ game.save!
 
 #Gruppe C
 
-game = Game.new( :gametime => '2018-06-16T12:00:00Z' )
+game = Game.new( :gametime => '2018-06-16T12:00:00' )
 game.stadium = Stadium.find_by_city('Kasan')
 game.team_one = C1
 game.team_two = C2
 game.group = gruppe_c
 game.save!
 
-game = Game.new( :gametime => '2018-06-16T18:00:00Z' )
+game = Game.new( :gametime => '2018-06-16T18:00:00' )
 game.stadium = Stadium.find_by_city('Saransk')
 game.team_one = C3
 game.team_two = C4
@@ -127,14 +127,14 @@ game.save!
 
 #Gruppe D
 
-game = Game.new( :gametime => '2018-06-16T15:00:00Z' )
+game = Game.new( :gametime => '2018-06-16T15:00:00' )
 game.stadium = Stadium.find_by_city('Moskau (Spartak)')
 game.team_one = D1
 game.team_two = D2
 game.group = gruppe_d
 game.save!
 
-game = Game.new( :gametime => '2018-06-16T21:00:00Z' )
+game = Game.new( :gametime => '2018-06-16T21:00:00' )
 game.stadium = Stadium.find_by_city('Kaliningrad')
 game.team_one = D3
 game.team_two = D4
@@ -143,14 +143,14 @@ game.save!
 
 #Gruppe E
 
-game = Game.new( :gametime => '2018-06-16T20:00:00Z' )
+game = Game.new( :gametime => '2018-06-16T20:00:00' )
 game.stadium = Stadium.find_by_city('Rostow am Don')
 game.team_one = E1
 game.team_two = E2
 game.group = gruppe_e
 game.save!
 
-game = Game.new( :gametime => '2018-06-17T14:00:00Z' )
+game = Game.new( :gametime => '2018-06-17T14:00:00' )
 game.stadium = Stadium.find_by_city('Samara')
 game.team_one = E3
 game.team_two = E4
@@ -159,14 +159,14 @@ game.save!
 
 #Gruppe F
 
-game = Game.new( :gametime => '2018-06-17T17:00:00Z' )
+game = Game.new( :gametime => '2018-06-17T17:00:00' )
 game.stadium = Stadium.find_by_city('Moskau (Luschniki)')
 game.team_one = F1
 game.team_two = F2
 game.group = gruppe_f
 game.save!
 
-game = Game.new( :gametime => '2018-06-18T14:00:00Z' )
+game = Game.new( :gametime => '2018-06-18T14:00:00' )
 game.stadium = Stadium.find_by_city('Nischni Nowgorod')
 game.team_one = F3
 game.team_two = F4
@@ -175,14 +175,14 @@ game.save!
 
 #Gruppe G
 
-game = Game.new( :gametime => '2018-06-18T17:00:00Z' )
+game = Game.new( :gametime => '2018-06-18T17:00:00' )
 game.stadium = Stadium.find_by_city('Sotschi')
 game.team_one = G1
 game.team_two = G2
 game.group = gruppe_g
 game.save!
 
-game = Game.new( :gametime => '2018-06-18T20:00:00Z' )
+game = Game.new( :gametime => '2018-06-18T20:00:00' )
 game.stadium = Stadium.find_by_city('Wolgograd')
 game.team_one = G3
 game.team_two = G4
@@ -191,14 +191,14 @@ game.save!
 
 #Gruppe H
 
-game = Game.new( :gametime => '2018-06-19T17:00:00Z' )
+game = Game.new( :gametime => '2018-06-19T17:00:00' )
 game.stadium = Stadium.find_by_city('Moskau (Spartak)')
 game.team_one = H1
 game.team_two = H2
 game.group = gruppe_h
 game.save!
 
-game = Game.new( :gametime => '2018-06-19T14:00:00Z' )
+game = Game.new( :gametime => '2018-06-19T14:00:00' )
 game.stadium = Stadium.find_by_city('Saransk')
 game.team_one = H3
 game.team_two = H4

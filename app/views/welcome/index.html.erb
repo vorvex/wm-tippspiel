@@ -1,4 +1,33 @@
 <h1>Welcome#index</h1>
-<% @teams.each do |team| %> 
-<p><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag') %> <%= team.country %></p>
+
+<% @groups.each do |group| %>
+<h4>Gruppe <%= group.name %></h4>
+<% group.games.each do |game| %> 
+<p><%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></p>
+<div class="game_container">
+  <%= game.team_one.country %>
+  <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
+  <% if game.status === 'beendet' %>  
+    <%= game.goals_team_one %> : <%= game.goals_team_two %>
+  <% elsif game.status === 'gestartet' %>
+    -.-
+  <% else %>
+    <% if logged_in_user? %>
+    <%= form_for(@tipp, :html => {class: "tipp", role: "form"}, url: tipp_abgeben_path) do |f| %>
+    <%= f.hidden_field :game_id, value: game.id %>
+    <%= f.text_field :goals_one, class: "tipp_tor", placeholder: "0" %>
+    <%= f.text_field :goals_two, class: "tipp_tor", placeholder: "0" %>
+    <%= f.submit "Tipp abgeben"%>
+    <% end %>
+    <% end %>
+  <% end %>
+  <%= image_tag('flags/' + game.team_two.flag_url + '.png', :alt => game.team_two.country, :class => 'flag', :size => '32x32') %>  <%= game.team_two.country %></p>
+</div>
+<% if game.tipps.any? %>
+<div class="tipp_container">
+  <p> Ihr Tipp: <%= @tipp.goals_one %> : <%= @tipp.goals_two %></p>
+</div>
+<% end%>
 <% end %>
+<% end %>
+
