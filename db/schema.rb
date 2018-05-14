@@ -10,11 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_12_193502) do
+ActiveRecord::Schema.define(version: 2018_05_14_064932) do
+
+  create_table "games", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "round_id"
+    t.datetime "gametime"
+    t.integer "stadium_id"
+    t.integer "team_one"
+    t.integer "team_two"
+    t.integer "goals_team_one", default: 0
+    t.integer "goals_team_two", default: 0
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rounds", force: :cascade do |t|
+    t.string "name"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stadia", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "position"
+    t.integer "round_id"
+    t.string "country", default: ""
+    t.string "flag_url", default: ""
+    t.integer "group_id"
+    t.integer "games", default: 0
+    t.integer "wins", default: 0
+    t.integer "draws", default: 0
+    t.integer "losses", default: 0
+    t.integer "goals", default: 0
+    t.integer "goals_allowed", default: 0
+    t.integer "points", default: 0
+    t.integer "place", default: 0
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipps", force: :cascade do |t|
+    t.integer "gamer_id"
+    t.integer "game_id"
+    t.integer "goals_one"
+    t.integer "goals_two"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
