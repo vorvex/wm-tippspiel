@@ -1,0 +1,4 @@
+<%= form_for(@tipp, :html => {class: "tipp", role: "form"}, url: tipp_abgeben_path) do |f| %>
+      <%= f.text_field :goals_one, class: "tipp_tor", placeholder: "0" %>
+      <%= f.text_field :goals_two, class: "tipp_tor", placeholder: "0" %>
+<% end %>

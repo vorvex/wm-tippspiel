@@ -2,11 +2,18 @@ class WelcomeController < ApplicationController
   def index
     @groups = Group.all
     @tipp = Tipp.new
+    @tipps = User.find(current_user.id).tipps
   end
   
   def tipp_abgeben
-    
-    @tipp = Tipp.create!(:user_id => @current_user, :game_id => params['game_id'], :goals_one => params['goals_one'], :goals_two =>	params['goals_two'])
-    redirect_to welcome_path
+    @tipp = Tipp.new(tipp_params)
+    @tipp.save
+    redirect_to root_path
   end
+  
+  private
+  
+  def tipp_params
+      params.require(:tipp).permit(:user_id, :game_id, :goals_one, :goals_two)
+    end
 end

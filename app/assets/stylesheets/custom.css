@@ -1,0 +1,116 @@
+.game_container {
+  display: flex;
+  padding: 10px;
+  margin: 5px 0px 45px 0px;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px 0 rgba(71,69,84,0.50);
+  border-radius: 2px;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+}
+
+.group_container {
+  
+}
+
+.game_ergebnis {
+  font-family: 'Orbitron', sans-serif;
+  padding: 4px 5px 0px 5px;
+  font-size: 26px;
+  color: #FFF5FF;
+  line-height: 30px;
+  background: #474554;
+  border-radius: 2px;
+  heigth: 32px;
+  width: 74px;
+  margin: 0 5px;
+}
+
+.game_during {
+  display: flex;
+  font-family: 'Orbitron', sans-serif;
+  padding: 4px 5px 0px 5px;
+  font-size: 26px;
+  color: #FFF5FF;
+  line-height: 30px;
+  background: #00AC85;
+  border-radius: 2px;
+  heigth: 32px;
+  width: 74px;
+  margin: 0 5px;
+  justify-content: center;
+}
+
+.game_before {
+  display: flex;
+  font-family: 'Orbitron', sans-serif;
+  padding: 4px 5px 0px 5px;
+  font-size: 26px;
+  color: #FFF5FF;
+  line-height: 30px;
+  background: #474554;
+  border-radius: 2px;
+  heigth: 32px;
+  width: 74px;
+  margin: 0 5px;
+  justify-content: center;
+}
+
+.game_tipp {
+  heigth: 48px;
+  width: 74px;
+}
+
+.tipp_container {
+  font-family: 'Orbitron', sans-serif;
+  padding: 4px 5px 0px 5px;
+  font-size: 26px;
+  color: #FFF5FF;
+  line-height: 30px;
+  background: #474554;
+  border-radius: 2px;
+  heigth: 32px;
+  width: 74px;
+}
+
+.tipp_goal {
+  width: 34%;
+  background-color: transparent;
+  border-style: none;
+  text-align: center;
+  font-size: 26px;
+}
+
+.tipp_submit {
+  width: 74px;
+  margin-top: 9px;
+  border-style: none;
+  background-color: lightgrey;
+  color: #340030;
+}
+
+.tipp_bottom {
+  margin-top: -40px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding: 4px 0px;
+}
+
+.team {
+  font-family: 'Orbitron', sans-serif;
+  height: 32px;
+  margin: 0 10px;
+  padding-top: 7px;
+  font-size: 20px;
+}
+
+.time_date {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.tipp_outercontainer {
+  width: 74px;
+  margin-top: 28px;
+}

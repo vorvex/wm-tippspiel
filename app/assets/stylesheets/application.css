@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+  font-family: 'Sports';
+  src: url(/assets/fonts/Sports.ttf) format("truetype"), 
+  font-weight: normal;
+  font-style: normal;
+}
