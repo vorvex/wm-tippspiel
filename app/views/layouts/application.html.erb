@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "WmTippspiel" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "WM Tippspiel" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -31,6 +31,9 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Spiele", "/"  %></li>
             <li><%= link_to "Gruppenphase", "/groups"  %></li>
+          </ul>
+          <ul class="nav navbar-nav">
+          <li><% if user_signed_in? %><%= link_to "Ausloggen", destroy_user_session_path, method: :delete, class: "pull-right"  %><% end %></li>
           </ul>
         </div>
       </div>

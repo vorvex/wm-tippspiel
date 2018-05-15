@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
   def default
     @live_games = Game.currently_playing()
     @recently_finished_games = Game.recently_finished(Time.now)
+    if user_signed_in?
     @tipp = Tipp.new
     @tipps = User.find(current_user.id).tipps
+    end
   end
 end
