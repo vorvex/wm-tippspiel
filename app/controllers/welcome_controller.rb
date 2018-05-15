@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     if user_signed_in?
-      redirect_to overview_path
+      redirect_to games_path
     else
       redirect_to signup_path
     end

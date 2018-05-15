@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'welcome#index'
+  root 'welcome#games'
   devise_scope :user do
     get 'login' => 'devise/sessions#new'
     get 'signup' => 'devise/registrations#new'
     post 'tipp_abgeben' => 'welcome#tipp_abgeben'
     get 'tipp/:id' => 'tipp#edit'
-    
-    get 'games' => 'welcome#games'
     get 'groups' => 'welcome#groups'
     get 'overview' => 'welcome#overview'
   end
