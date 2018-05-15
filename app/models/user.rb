@@ -8,4 +8,9 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 }
   
   has_many :tipps
+  
+  def position()
+    x = User.where('points > ?', self.points).count + 1
+    return x
+  end
 end

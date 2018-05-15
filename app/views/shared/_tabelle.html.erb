@@ -1,0 +1,17 @@
+<h2>Top 10</h2>
+<table class="table table-hover">
+  <thead>
+    <td>Pos</td>
+    <td>Nutzer</td>
+    <td style="text-align: right;">Punkte</td>
+  </thead>
+  <tbody>
+    <% User.order(points: :desc).limit(10).each do |user| %>
+      <tr>
+        <td class="col-md-1"><%= user.position %></td>
+        <td class="col-md-8"><%= user.nickname %></td>
+        <td class="col-md-3" style="text-align: right;"><%= user.points %></td>
+      </tr>
+    <% end %>
+  </tbody>  
+</table>

@@ -59,9 +59,14 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-md-8">
           <%= bootstrap_flash %>
           <%= yield %>
+        </div>
+        <div class="col-md-4">
+          <%= render 'shared/tabelle' %>
+          <%= render 'shared/live' %>
+          <%= render 'shared/recently_finished' %>
         </div>
       </div><!--/row-->
 

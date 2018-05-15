@@ -1,7 +1,9 @@
 #Admin erstellen
 
-u = User.create(:email => "admin@kek-it.de", :nickname => "admin", :password => "topsecret", :password_confirmation => "topsecret", :role_name => 'admin')
-
+u = User.create(:email => "admin@kek-it.de", :nickname => "leon", :password => "topsecret", :password_confirmation => "topsecret", :role_name => 'admin', points: 10)
+u1 = User.create(:email => "karlheinz@kek-it.de", :nickname => "karlheinz", :password => "topsecret", :password_confirmation => "topsecret", :role_name => 'admin', points: 8)
+u2 = User.create(:email => "julian@kek-it.de", :nickname => "julian", :password => "topsecret", :password_confirmation => "topsecret", :role_name => 'admin', points: 3)
+u3 = User.create(:email => "bernhard@kek-it.de", :nickname => "bernhard", :password => "topsecret", :password_confirmation => "topsecret", :role_name => 'admin', points: 5)
 #Gruppen erstellen
 gruppe_a = Group.create!(:name => 'A')
 

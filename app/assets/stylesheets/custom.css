@@ -11,7 +11,34 @@
 }
 
 .group_container {
-  
+  padding: 10px;
+  margin: 0px 0px 20px 0px;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px 0 rgba(71,69,84,0.50);
+  border-radius: 4px;
+}
+
+.group_container h2 {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0px 0px 10px 0px;
+}
+
+.group_table {
+  height: 32px;
+  margin: 0px 0px;
+  padding-top: 7px;
+  font-size: 20px;
+}
+
+.group_table:nth-child(1) {
+  background-color: #fff5ff;
+}
+.group_table:nth-child(2) {
+  background-color: #fff5ff;
+
+}
+.country {
+  font-family: 'Orbitron', sans-serif;
 }
 
 .game_ergebnis {
@@ -113,4 +140,60 @@
 .tipp_outercontainer {
   width: 74px;
   margin-top: 28px;
+}
+
+.flag {
+  display: inline;
+}
+
+  .visible-xxs {
+    display: none !important;
+  }
+
+@media only screen and (max-width: 374px) {
+  .hidden-xxs {
+    display: none !important;
+  }
+  
+  .visible-xxs {
+    display: block !important;
+  }
+  .game_container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .team {
+    margin: 0px 5px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+
+  .group_container h2 {
+   font-size: 20px;
+  }
+  .flag {
+    height: 20px !important;
+    width: 20px !important;
+  }
+  .group_table {
+    height: 20px;
+    margin: 0px 0px;
+    padding-top: 0px;
+    font-size: 14px;
+  }
+  
+  .country {
+    display: none !important;
+  }
+  .shortname {
+    display: block !important;
+    font-family: 'Orbitron', sans-serif;
+  } 
+}
+
+@media only screen and (min-width: 540px) {
+  .shortname {
+    display: none !important;
+  } 
 }

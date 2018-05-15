@@ -1,0 +1,43 @@
+<% if !@live_games.empty? %>
+<h2>Live</h2>
+<% @live_games.each do |game| %> 
+  <h5 class="time_date"><%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></h5>
+  <div class="game_container">
+    <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
+    <span class="team"><%= game.team_one.shortname %></span>
+    <% if game.status === 'beendet' %>  
+    <span class="game_ergebnis"><%= game.goals_team_one %> : <%= game.goals_team_two %></span>
+    <% elsif game.status === 'gestartet' %>
+      <span class="game_during">- : -</span>
+    <% elsif @tipps.find_by_game_id(game.id) %>
+      <span class="game_before">- : -</span>
+    <% else %>
+      <% if user_signed_in? && !@tipps.find_by_game_id(game.id) %>
+        <%= form_for(@tipp, :html => {class: "game_tipp", role: "form"}, url: tipp_abgeben_path) do |f| %>
+        <%= f.hidden_field :game_id, value: game.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="tipp_outercontainer">
+          <div class="tipp_container">
+            <%= f.text_field :goals_one, placeholder: "0", class: "tipp_goal" %>
+            <span>:</span>
+            <%= f.text_field :goals_two, placeholder: "0", class: "tipp_goal" %>
+          </div>
+          <%= f.submit "Tippen", class: "tipp_submit"%>
+        </div>
+      <% end %>
+      <% end %>
+    <% end %>
+    <span class="team"><%= game.team_two.shortname %></span>
+    <%= image_tag('flags/' + game.team_two.flag_url + '.png', :alt => game.team_two.country, :class => 'flag', :size => '32x32') %>
+  </div>
+  <% if @tipps.find_by_game_id(game.id) %>
+  <div class="tipp_bottom">
+    <p> Ihr Tipp: <%= @tipps.find_by_game_id(game.id).goals_one %> : <%= @tipps.find_by_game_id(game.id).goals_two %> 
+      <% if game != 'gestartet' && game != 'beendet' %>
+        <a href="/tipp/<%= @tipps.find_by_game_id(game.id).id %>">Tipp bearbeiten</a>
+      <% end %>
+    </p>
+  </div>
+  <% end%>
+  <% end %>
+  <% end %>
