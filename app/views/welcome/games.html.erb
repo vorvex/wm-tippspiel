@@ -1,4 +1,4 @@
-<h2>Nächste Spiele</h2>
+<h2 class="group_header">Nächste Spiele</h2>
 <% @upcoming_games.each do |game| %> 
   <h5 class="time_date"><%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></h5>
   <div class="game_container">

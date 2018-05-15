@@ -1,3 +1,8 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
 .game_container {
   display: flex;
   padding: 10px;
@@ -18,8 +23,9 @@
   border-radius: 4px;
 }
 
-.group_container h2 {
-  font-family: 'Orbitron', sans-serif;
+.group_header {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   margin: 0px 0px 10px 0px;
 }
 
@@ -111,7 +117,7 @@
 
 .tipp_submit {
   width: 74px;
-  margin-top: 9px;
+  margin-top: 8px;
   border-style: none;
   background-color: lightgrey;
   color: #340030;
@@ -139,7 +145,7 @@
 
 .tipp_outercontainer {
   width: 74px;
-  margin-top: 28px;
+  margin-top: 33px;
 }
 
 .flag {
@@ -169,7 +175,7 @@
 
 @media only screen and (max-width: 540px) {
 
-  .group_container h2 {
+  .group_header {
    font-size: 20px;
   }
   .flag {
