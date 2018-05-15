@@ -17,9 +17,9 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
         <div class="tipp_outercontainer">
           <div class="tipp_container">
-            <%= f.text_field :goals_one, placeholder: "0", class: "tipp_goal" %>
+            <%= f.text_field :goals_one, placeholder: "0", class: "tipp_goal", :required => true %>
             <span>:</span>
-            <%= f.text_field :goals_two, placeholder: "0", class: "tipp_goal" %>
+            <%= f.text_field :goals_two, placeholder: "0", class: "tipp_goal", :required => true %>
           </div>
           <%= f.submit "Tippen", class: "tipp_submit"%>
         </div>

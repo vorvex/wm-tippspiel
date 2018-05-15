@@ -33,7 +33,7 @@ class WelcomeController < ApplicationController
   def tipp_abgeben
     @tipp = Tipp.new(tipp_params)
     @tipp.save
-    redirect_to games_path
+    redirect_to root_path
   end
   
   
