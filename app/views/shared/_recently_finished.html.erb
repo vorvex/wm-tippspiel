@@ -33,7 +33,7 @@
   <% if @tipps.find_by_game_id(game.id) %>
   <div class="tipp_bottom">
     <p> Ihr Tipp: <%= @tipps.find_by_game_id(game.id).goals_one %> : <%= @tipps.find_by_game_id(game.id).goals_two %> 
-      <% if game != 'gestartet' && game != 'beendet' %>
+      <% if game.status != 'gestartet' && game.status != 'beendet' %>
         <a href="/tipp/<%= @tipps.find_by_game_id(game.id).id %>">Tipp bearbeiten</a>
       <% end %>
     </p>

@@ -1,5 +1,19 @@
 class Refresher
   class << self
+    
+    def game_status
+      @game = Game.all
+      @time = Time.now
+    @game.each do |game|
+      unless game.status === 'beendet'
+        if game.gametime <= @time
+          game.status == 'gestartet'
+          game.save!
+        end
+      end
+    end
+    end
+    
     def refresh_all
       refresh_groups
       refresh_gamers
@@ -10,18 +24,19 @@ class Refresher
       refresh_games
       refresh_goals
       refresh_wins_and_losses
+      refresh_position
     end
 
     def refresh_gamers
       @games = Game.finished
-      @gamers = User.all(:include => :tipps)
+      @gamers = User.all
 
       @gamers.each do |gamer|
         gamer.points = 0
         @games.each do |game|
           @tipps = game.tipps
           @tipps.each do |tipp|
-            if gamer == tipp.gamer
+            if gamer == tipp.user
               gamer.points += calculate_points(game.goals_team_one, game.goals_team_two,
                                                tipp.goals_one, tipp.goals_two)
             end
@@ -54,7 +69,7 @@ class Refresher
       @teams = Team.all
 
       @teams.each do |team|
-        team.games = @games.all(:conditions => ["team_one = ? or team_two = ?", team.id, team.id]).size
+        team.games = @games.where("team_one = ? or team_two = ?", team.id, team.id).size
         team.save!
       end
     end
@@ -68,14 +83,14 @@ class Refresher
         goals_won = 0
         goals_lost = 0
 
-        @games.all(:conditions => ["team_one = ? or team_two = ?", team.id, team.id]).each do |game|
+        @games.where("team_one = ? or team_two = ?", team.id, team.id).each do |game|
           goals_won += game.goals_team_one if game.team_one == team
           goals_lost += game.goals_team_two if game.team_one == team
           goals_won += game.goals_team_two if game.team_two == team
           goals_lost += game.goals_team_one if game.team_two == team
         end
-        team.goals_won = goals_won
-        team.goals_lost = goals_lost
+        team.goals = goals_won
+        team.goals_allowed = goals_lost
         team.save!
       end
     end
@@ -90,7 +105,7 @@ class Refresher
         wins = 0
         losses = 0
         draws = 0
-        @games.all(:conditions => ["team_one = ? or team_two = ?", team.id, team.id]).each do |game|
+        @games.where("team_one = ? or team_two = ?", team.id, team.id).each do |game|
           #puts "++++ game.winner.country = #{game.winner.country} ; team.country = #{team.country}"
           wins += 1 if game.winner == team
           losses += 1 if game.loser == team
@@ -98,7 +113,7 @@ class Refresher
         end
         team.wins = wins
         team.losses = losses
-        team.draw = draws
+        team.draws = draws
         refresh_points(team)
         team.save!
       end
@@ -106,7 +121,20 @@ class Refresher
 
     def refresh_points(team)
       team.points = team.wins * 3
-      team.points += team.draw
+      team.points += team.draws
     end
+    
+    def refresh_position
+      #@groups = Group.all
+      #x = 0
+      #@groups.each do |group|
+        #group.teams.order(:points DSC:).order('goals - goals_allowed DSC').order(:goals DSC:).each do |team|
+          #x += 1
+          #team.position == x
+          #team.save!
+        #end
+      #end
+    end
+  
   end
 end

@@ -14,6 +14,22 @@ class Game < ApplicationRecord
     [team_one, team_two]
   end
   
+  def add_goal_for_team_one
+    self.goals_team_one += 1
+  end
+
+  def add_goal_for_team_two
+    self.goals_team_two += 1
+  end
+
+  def remove_goal_for_team_one
+    self.goals_team_one -= 1
+  end
+
+  def remove_goal_for_team_two
+    self.goals_team_two -= 1
+  end
+
   def is_draw?
     self.goals_team_one == self.goals_team_two
   end
@@ -45,7 +61,11 @@ class Game < ApplicationRecord
   end
   
   def self.currently_playing()
-      where('status LIKE ?', 'gestartet')
+    where('status LIKE ?', 'gestartet')
+  end
+  
+  def self.finished()
+    where('status LIKE ?', "beendet")
   end
   
 end

@@ -8,6 +8,13 @@ Rails.application.routes.draw do
     get 'tipp/:id' => 'tipp#edit'
     get 'groups' => 'welcome#groups'
     get 'overview' => 'welcome#overview'
+    
+    get 'admin' => 'admin#gameresults'
+    post 'goals_one/:id' => 'admin#add_goal_to_team_one', as: :goals_one
+    post 'goals_two/:id' => 'admin#add_goal_to_team_two', as: :goals_two
+    post 'remove_goals_one/:id' => 'admin#remove_goal_for_team_one', as: :remove_goals_one
+    post 'remove_goals_two/:id' => 'admin#remove_goal_for_team_two', as: :remove_goals_two
+    post 'finish/:id' => 'admin#end_game', as: :end_game
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
