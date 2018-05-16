@@ -2,13 +2,26 @@ class Team < ApplicationRecord
   belongs_to :group
   belongs_to :round
   
-
-
-
-  def self.countries
-    %w(Süd\ Afrika Deutschland Holland England)
+  def goal_difference()
+    x = self.goals - self.goals_allowed
+    return x
   end
-
+  
+  def change_place(group)
+    @teams = Team.where('group_id = ?', group)
+    x = 1
+    @teams.each do |team|
+      if team.points > self.points 
+        x += 1
+      elsif team.points === self.points && team.goal_difference > self.goal_difference
+        x += 1
+      elsif team.points === self.points && team.goal_difference == self.goal_difference && team.goals > self.goals
+        x += 1
+      end
+    end
+    return x
+  end
+  
   def increase_games_by(value)
     self.games += value
   end
@@ -24,5 +37,4 @@ class Team < ApplicationRecord
   def increase_losses_by(value)
     self.losses += value
   end
-  
 end

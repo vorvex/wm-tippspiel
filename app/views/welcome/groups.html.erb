@@ -12,9 +12,9 @@
         <td class="col-md-1" style="text-align: right;">Pkt.</td>
       </thead>
       <tbody>
-        <% group.teams.order(points: :desc).each do |team| %>
+        <% group.teams.order(position: :asc).each do |team| %>
           <tr class="group_table">
-            <td class="col-md-1"><%= team.position %></td>
+            <td class="col-md-1"><%= team.place %></td>
             <td class="col-md-5 country"><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag', :size => '32x32', :style => 'margin-right: 10px;') %> <%= team.country %></td>
             <td class="shortname"><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag', :size => '32x32', :style => 'margin-right: 10px;') %> <%= team.shortname %></td>
             <td class="col-md-1" style="text-align: center;"><%= team.games %></td>

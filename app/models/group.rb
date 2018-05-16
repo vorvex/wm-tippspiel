@@ -3,10 +3,10 @@ class Group < ActiveRecord::Base
   has_many :games
   
   def leader
-    teams.find(:all, :conditions => "place = 1").first
+    teams.where('place = ?', 1).first
   end
   
-  def second leader
-    teams.find(:all, :conditions => "place = 2").first
+  def second_leader
+    teams.where('place = ?', 2).first
   end
 end

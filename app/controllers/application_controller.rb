@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   
   def refresh
     Refresher.game_status
+    Refresher.refresh_place
   end
 protected
 

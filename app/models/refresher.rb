@@ -24,7 +24,7 @@ class Refresher
       refresh_games
       refresh_goals
       refresh_wins_and_losses
-      refresh_position
+      refresh_place
     end
 
     def refresh_gamers
@@ -124,17 +124,16 @@ class Refresher
       team.points += team.draws
     end
     
-    def refresh_position
-      #@groups = Group.all
-      #x = 0
-      #@groups.each do |group|
-        #group.teams.order(:points DSC:).order('goals - goals_allowed DSC').order(:goals DSC:).each do |team|
-          #x += 1
-          #team.position == x
-          #team.save!
-        #end
-      #end
+    def refresh_place
+     @groups = Group.all
+      @groups.each do |group|
+        group.teams.each do |team|
+          team.place = team.change_place(group.id)
+          team.save!
+        end
+      end
     end
+  
   
   end
 end
