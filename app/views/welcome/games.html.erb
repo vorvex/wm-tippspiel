@@ -1,5 +1,5 @@
 <h2 class="group_header">Nächste Spiele</h2>
-<% @upcoming_games.each do |game| %> 
+<% @games.each do |game| %> 
   <h5 class="time_date"><%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></h5>
   <div class="game_container">
     <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  

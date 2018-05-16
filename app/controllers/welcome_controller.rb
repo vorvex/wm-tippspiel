@@ -15,8 +15,7 @@ class WelcomeController < ApplicationController
   
   def games
     if user_signed_in?
-      @upcoming_games = Game.upcoming(Time.now)
-
+      @games = Game.upcoming(Time.now)
     else
       redirect_to login_path
     end
