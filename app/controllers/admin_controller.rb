@@ -1,7 +1,8 @@
 class AdminController < ApplicationController
+before_action :authenticate_admin
   
   def gameresults
-    @games = Game.all
+    @games = Game.all.limit(10)
   end
   
   def add_goal_to_team_one
@@ -34,6 +35,8 @@ class AdminController < ApplicationController
     
     def end_game
       @game = Game.find(params[:id])
+      @game.goals_team_one = params[:goals_team_one]
+      @game.goals_team_two = params[:goals_team_two]
       @game.status = "beendet"
       @game.save!
       Refresher.refresh_all

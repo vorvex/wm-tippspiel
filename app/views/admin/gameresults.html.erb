@@ -4,13 +4,17 @@
   <div class="game_container">
     <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
     <span class="team"><%= game.team_one.shortname %></span>
-      <%= link_to "+", goals_one_path(game.id), method: :post %>
-      <%= link_to "-", remove_goals_one_path(game.id), method: :post %>
-      <span class="game_during"><%= game.goals_team_one %> : <%= game.goals_team_two %></span>
-      <%= link_to "+", goals_two_path(game.id), method: :post %>
-      <%= link_to "-", remove_goals_two_path(game.id), method: :post %>
+        <%= form_for(:html => {class: "game_tipp", role: "form"}, url: save_results_path(game.id) do |f| %>
+        <div class="tipp_outercontainer">
+          <div class="tipp_container">
+            <%= f.text_field :goals_team_one, placeholder: "0", class: "tipp_goal", :required => true %>
+            <span>:</span>
+            <%= f.text_field :goals_team_two, placeholder: "0", class: "tipp_goal", :required => true %>
+          </div>
+          <%= f.submit "speichern", class: "tipp_submit"%>
+          </div>
+        <% end %>
     <span class="team"><%= game.team_two.shortname %></span>
     <%= image_tag('flags/' + game.team_two.flag_url + '.png', :alt => game.team_two.country, :class => 'flag', :size => '32x32') %>
   </div>
-    <%= link_to "Spiel beendet", end_game_path(game.id), method: :post %>
   <% end %>

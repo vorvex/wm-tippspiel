@@ -35,7 +35,21 @@ class WelcomeController < ApplicationController
     redirect_to root_path
   end
   
+  def how_to_play
   
+  end
+  
+  def impressum
+    
+  end
+  
+  def datenschutz
+    
+  end
+  
+  def richtlinien
+  
+  end
   private
   
   def tipp_params

@@ -39,28 +39,14 @@ class Game < ApplicationRecord
     self.goals_team_one > self.goals_team_two ? self.team_one : self.team_two
   end
 
-  def winner_game(game) 
-    @game = Game.find(game-1)
-    if @game.team_one.goals > @game.team_two.goals
-      @game.team_one
-    else
-      @game.team_two
-    end
-  end
+
   
   def loser
     return nil if is_draw?
     self.goals_team_one < self.goals_team_two ? self.team_one : self.team_two
   end
   
-  def loser_game(game) 
-    @game = Game.find(game-1)
-    if @game.team_one.goals < @game.team_two.goals
-      @game.team_one
-    else
-      @game.team_two
-    end
-  end
+
   
   def self.upcoming(time)
     if self.where(:gametime => time+7200..time+180000).empty?

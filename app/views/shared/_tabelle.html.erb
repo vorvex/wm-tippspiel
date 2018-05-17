@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 <div class="group_container">
-  <h2 class="group_header">Top 10</h2>
+  <h2 class="group_header">Top 5</h2>
   <table class="table table-hover">
     <thead>
       <td>Pos</td>
@@ -8,12 +8,19 @@
       <td style="text-align: right;">Punkte</td>
     </thead>
     <tbody>
-      <% User.order(points: :desc).limit(10).each do |user| %>
-        <tr class="group_table">
+      <% User.order(points: :desc).limit(5).each do |user| %>
+        <tr class="user_table" <% if user === current_user %>style="font-weight: 500;"<% end %></tr>
           <td class="col-md-1"><%= user.position %></td>
           <td class="col-md-8"><%= user.nickname %></td>
           <td class="col-md-3" style="text-align: right;"><%= user.points %></td>
         </tr>
+      <% end %>
+      <% if current_user.position > 5 %>
+      <tr class="user_table" style="font-weight: 500;">
+        <td class="col-md-1"><%= current_user.position %></td>
+        <td class="col-md-8"><%= current_user.nickname %></td>
+        <td class="col-md-3" style="text-align: right;"><%= current_user.points %></td>
+      </tr>
       <% end %>
     </tbody>  
   </table>

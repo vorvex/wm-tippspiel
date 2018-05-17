@@ -4,9 +4,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale, :default, :refresh
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :authenticate_admin
   
   def set_locale
     I18n.locale = 'de' || I18n.default_locale
+  end
+  
+  def authenticate_admin
+    @user = User.find(current_user.id)
+    if @user.role_name != 'admin'
+      redirect_to root_path
+    end
   end
   
   def default

@@ -4,18 +4,23 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login' => 'devise/sessions#new'
     get 'signup' => 'devise/registrations#new'
-    post 'tipp_abgeben' => 'welcome#tipp_abgeben'
-    get 'tipp/:id' => 'tipp#edit'
-    get 'groups' => 'welcome#groups'
-    get 'overview' => 'welcome#overview'
-    
-    get 'admin' => 'admin#gameresults'
-    post 'goals_one/:id' => 'admin#add_goal_to_team_one', as: :goals_one
-    post 'goals_two/:id' => 'admin#add_goal_to_team_two', as: :goals_two
-    post 'remove_goals_one/:id' => 'admin#remove_goal_for_team_one', as: :remove_goals_one
-    post 'remove_goals_two/:id' => 'admin#remove_goal_for_team_two', as: :remove_goals_two
-    post 'finish/:id' => 'admin#end_game', as: :end_game
-  end
+  end    
+  
+  post 'tipp_abgeben' => 'welcome#tipp_abgeben'
+  get 'tipp/:id' => 'tipp#edit'
+  get 'admin' => 'admin#gameresults'
+  post 'goals_one/:id' => 'admin#add_goal_to_team_one', as: :goals_one
+  post 'goals_two/:id' => 'admin#add_goal_to_team_two', as: :goals_two
+  post 'remove_goals_one/:id' => 'admin#remove_goal_for_team_one', as: :remove_goals_one
+  post 'remove_goals_two/:id' => 'admin#remove_goal_for_team_two', as: :remove_goals_two
+  patch 'finish' => 'admin#end_game', as: :save_results
+
+  get 'groups' => 'welcome#groups'
+  get 'overview' => 'welcome#overview'
+  get 'how-to-play' => 'welcome#how_to_play'
+  get 'impressum' => 'welcome#impressum'
+  get 'datenschutz' => 'welcome#datenschutz'
+  get 'richtlinien' => 'welcome#richtlinien'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

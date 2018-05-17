@@ -16,10 +16,20 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron:400,700" rel="stylesheet">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','TZ95235');</script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
-
-    <div class="navbar navbar-default navbar-static-top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=TZ95235"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
@@ -31,29 +41,27 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Spiele", "/"  %></li>
             <li><%= link_to "Gruppenphase", "/groups"  %></li>
+            <li><%= link_to "Spielstand", "/tabelle" %></li>
+            <li><%= link_to "Anleitung", "/how-to-play" %></li>
           </ul>
-          <ul class="nav navbar-nav">
-          <li><% if user_signed_in? %><%= link_to "Ausloggen", destroy_user_session_path, method: :delete, class: "pull-right"  %><% end %></li>
+          <ul class="nav navbar-nav navbar-right">
+          <li><% if user_signed_in? %><%= link_to "Ausloggen", destroy_user_session_path, method: :delete, class: "pull-right"  %><% else %><%= link_to "Anmelden", login_path, class: "pull-right"  %><% end %></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
+    <div class="container" style="margin-top: 70px;">
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
-        <div class="col-md-4">
-          <%= render 'shared/tabelle' %>
-          <%= render 'shared/live' %>
-          <%= render 'shared/recently_finished' %>
-        </div>
-      </div><!--/row-->
 
       <footer>
-        <p>&copy; Leon Dahmer 2018</p>
+        <p>
+          &copy; 2018 KEK Anwendungssysteme GmbH   |   Created by: Leon Dahmer  |
+          <%= link_to "Datenschutz", datenschutz_path, target: "_blank" %>   |   
+          <%= link_to "Impressum", impressum_path, target: "_blank" %>   |   
+          <%= link_to "Nutzungs-Richtlinien", richtlinien_path, target: "_blank" %>
+        </p>
       </footer>
 
     </div> <!-- /container -->

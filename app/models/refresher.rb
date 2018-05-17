@@ -97,7 +97,7 @@ class Refresher
 
     # Amount of games won per team is updated based on finished games
     def refresh_wins_and_losses
-      @games = Game.finished
+      @games = Game.finished.where('round_id = ?', 1)
       @teams = Team.all
 
 

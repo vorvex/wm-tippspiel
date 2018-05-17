@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  color: #340030;
 }
 
 .game_container {
@@ -37,12 +38,13 @@ body {
 }
 
 .group_table:nth-child(1) {
-  background-color: #fff5ff;
+  box-shadow: inset 3px 0 #8f2684;
 }
-.group_table:nth-child(2) {
-  background-color: #fff5ff;
 
+.group_table:nth-child(2) {
+  box-shadow: inset 3px 0 #8f2684;
 }
+
 .country {
   font-family: 'Orbitron', sans-serif;
 }
@@ -58,6 +60,7 @@ body {
   heigth: 32px;
   width: 74px;
   margin: 0 5px;
+  text-align: center;
 }
 
 .game_during {
