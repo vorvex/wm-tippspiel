@@ -4,6 +4,12 @@ body {
   color: #340030;
 }
 
+
+.twitter-timeline {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
 .game_container {
   display: flex;
   padding: 10px;

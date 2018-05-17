@@ -1,6 +1,9 @@
 <h2 class="group_header">Nächste Spiele</h2>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-3">
+    <%= render 'shared/twitter' %>
+  </div>
+  <div class="col-md-6">
     <% @games.each do |game| %> 
       <h5 class="time_date"><%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></h5>
       <div class="game_container">
@@ -42,7 +45,7 @@
     <% end%>
     <% end %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <%= render 'shared/tabelle' %>
       <%= render 'shared/live' %>
       <%= render 'shared/recently_finished' %>
