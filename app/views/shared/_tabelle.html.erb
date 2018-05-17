@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<div class="group_container">
+<div>
   <h2 class="group_header">Top 5</h2>
   <table class="table table-hover">
     <thead>
@@ -25,4 +25,5 @@
     </tbody>  
   </table>
 </div>
+<%= link_to 'Komplette Tabelle anzeigen', tabelle_path %>
 <% end %>

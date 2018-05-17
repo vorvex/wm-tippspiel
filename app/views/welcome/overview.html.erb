@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-8">
+    <div>
+      
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcomming" role="tab" data-toggle="tab">Bevorstehende Partien</a></li>
+      <li role="presentation"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Vor kurzem beendete Partien</a></li>
+
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content" style="min-height: 300px;">
+      <div role="tabpanel" class="tab-pane active" id="upcoming">
+        <%= render 'shared/upcoming' %>
+      </div>
+
+      <div role="tabpanel" class="tab-pane" id="recent">
+        <%= render 'shared/recently_finished' %>
+      </div>
+    </div>
+      
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+    <h2 class="group_header">Gruppentabellen</h2>  
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <% Group.all.each do |group| %>
+      <li role="presentation" class="<%= 'active' if group.name === 'F' %>"><a href="#group_<%= group.name %>" aria-controls="group_<%= group.name %>" role="tab" data-toggle="tab"><%= group.name %></a></li>
+      <% end %>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <% Group.all.each do |group| %>
+      <div role="tabpanel" class="tab-pane <%= 'active' if group.name === 'F' %>" id="group_<%= group.name %>">
+        <%= render "shared/groups", group: group %>
+      </div>
+      <% end %>
+    </div>
+      
+    </div>
+  </div>
+  <div class="col-md-4">
+    <%= render 'shared/tabelle' %>
+    <%= render 'shared/twitter' %>
+  </div>
+</div

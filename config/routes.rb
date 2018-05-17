@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'welcome#games'
+  root 'welcome#overview'
   devise_scope :user do
     get 'login' => 'devise/sessions#new'
     get 'signup' => 'devise/registrations#new'
@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   patch 'finish' => 'admin#end_game', as: :save_results
 
   get 'groups' => 'welcome#groups'
-  get 'overview' => 'welcome#overview'
+  get 'games' => 'welcome#games'
+  get 'tabelle' => 'welcome#tabelle'
   get 'how-to-play' => 'welcome#how_to_play'
   get 'impressum' => 'welcome#impressum'
   get 'datenschutz' => 'welcome#datenschutz'

@@ -8,14 +8,18 @@ class WelcomeController < ApplicationController
   end
   
   def overview
-    @groups = Group.all
-    @tipp = Tipp.new
-    @tipps = User.find(current_user.id).tipps
+    if user_signed_in?
+      @upcoming_games = Game.upcoming(Time.now)
+      @recently_finished_games = Game.recently_finished(Time.now)
+    else
+      redirect_to login_path
+    end
   end
   
   def games
     if user_signed_in?
-      @games = Game.upcoming(Time.now)
+      @upcoming_games = Game.upcoming(Time.now)
+      @recently_finished_games = Game.recently_finished(Time.now)
     else
       redirect_to login_path
     end
