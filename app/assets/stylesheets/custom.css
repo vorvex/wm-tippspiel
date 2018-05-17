@@ -206,3 +206,279 @@ body {
     display: none !important;
   } 
 }
+@media (max-width: 500px){
+	  .ol-contact-container {
+		display: none;
+	  }
+	}
+
+	.ol-contact {
+	  position: fixed; 
+	  top: 0px; right: 20px; 
+	  bottom: 0px; 
+	  z-index: 2000; 
+	  width: 50px; 
+	  height: 50px; 
+	  margin-top: auto; 
+	  margin-right: 0px; 
+	  margin-bottom: auto; 
+	  padding: 12px; 
+	  border-radius: 35px; 
+	  background-color: #8f2684b3;
+      cursor: pointer;
+	}
+	.ol-contact:hover {
+		background-color: #8f2684;	
+	}
+	.ol-contact img {
+		height: 26px;
+		width: 26px;
+	}
+	
+	#olContactExtended {
+	  position: fixed;
+	  top: 0px;
+	  right: -460px;
+	  bottom: 0px;
+	  z-index: 2001;
+	  display: block;
+	  width: 420px;
+	  height: 260px;
+	  margin-top: auto;
+	  margin-bottom: auto;
+	  padding: 20px;
+	  -webkit-box-orient: horizontal;
+	  -webkit-box-direction: normal;
+	  -webkit-flex-direction: row;
+	  -ms-flex-direction: row;
+	  flex-direction: row;
+	  -webkit-box-pack: start;
+	  -webkit-justify-content: flex-start;
+	  -ms-flex-pack: start;
+	  justify-content: flex-start;
+	  -webkit-box-align: center;
+	  -webkit-align-items: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  border-left: 10px none #008fd3;
+	  border-top-left-radius: 10px;
+	  border-bottom-left-radius: 10px;
+	  background-color: #fff5ff;
+	  box-shadow: 0 7px 14px -3px hsla(0, 0%, 61%, 0.5); 
+	}
+	.ol-contact-header {
+	  padding-left: 0px; 
+	  color: #340030;
+	}
+	.ol-contact-close {
+	  float: right; 
+	  margin-right: 10px; 
+	  cursor: pointer;
+	}
+	.ol-contact-body-container {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  margin-right: 20px;
+	  -webkit-box-pack: justify;
+	  -webkit-justify-content: space-between;
+	  -ms-flex-pack: justify;
+	  justify-content: space-between;
+	  -webkit-box-align: start;
+	  -webkit-align-items: flex-start;
+	  -ms-flex-align: start;
+	  align-items: flex-start;
+	}
+	.ol-contact-body-container img {
+	  border-radius: 60px;
+		height: 120px;
+		width: 120px;
+	}
+	.ol-contact-body {
+	  width: 100%;
+	  margin-top: 0px;
+	  color: #340030;
+	  font-size: 16px;
+	  font-weight: 400;
+	  text-align: right;
+	}
+	.ol-contact-body a {
+	  color: #8f2684;
+	}
+	.ol-contact-btn {
+	  display: inline-block;
+	  width: 100%;
+	  color: #ffffff;
+	  border: 0;
+	  line-height: inherit;
+	  padding: 9px 15px;
+	  margin: 10px 0px 0px 0px;
+	  background-color: #8f2684;
+	  text-align: center;
+	  text-decoration: none;
+	  cursor: pointer;
+	  border-radius: 0; 
+	  }
+
+  
+  .ol-socials {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 2000;
+    width: 50px;
+    height: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 0px;
+  }
+
+  .ol-social-close {
+    width: 32px;
+    height: 30px;
+    padding: 7px 8px;
+    background-color: rgba(71, 69, 84, 0.3);
+  }
+
+  .ol-social-close:hover {
+    background-color: rgba(71, 69, 84, 0.6);
+  }
+
+  .w-inline-block {
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  #ol-social-btn-con {
+    position: fixed;
+  }
+
+  .ol-social-btn {
+    display: block;
+	width: 30px;
+	height: 30px;
+	margin-top: 4px;
+	margin-bottom: 0px;
+	padding: 7px;
+    background-color: rgba(71, 69, 84, 0.3);
+  }
+
+  .ol-social-btn:hover {
+    background-color: rgba(71, 69, 84, 0.6);
+  }
+
+.ol-cookies {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2002;
+  max-width: 100vw;
+  margin: 20px;
+  padding: 20px;
+  background-color: #474554;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+}
+
+.ol-cookies-header {
+  margin-top: 0px;
+  color: #fff5ff;
+}
+
+.ol-cookies-text {
+  max-width: 300px;
+  color: #fff5ff;
+}
+
+.ol-cookies-link {
+  color: #fff5ff;
+  text-decoration: none;
+}
+
+.ol-cookies-close {
+  float: right;
+  background-color: #8f2684;
+  color: #fff;
+  display: inline-block;
+  padding: 9px 15px;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+.w-clearfix:before,
+.w-clearfix:after {
+  content: " ";
+  display: table;
+}
+.w-clearfix:after {
+  clear: both;
+}
+    .ol-socials-cl {
+      -webkit-animation-name: OlSocialsCl;
+      animation-name: OlSocialsCl;
+      -webkit-animation-duration:1s;
+      animation-duration: 1s;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+    .ol-socials-op {
+      -webkit-animation-name: OlSocialsOp;
+      animation-name: OlSocialsOp;
+      -webkit-animation-duration:1s;
+      animation-duration: 1s;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes OlSocialsCl {
+        from {left: 0px;}
+        to {left: -50px;}
+    }
+    @keyframes OlSocialsOp {
+        from {left: -50px;}
+        to {left: 0px;}
+    }
+	.ol1 {
+	  -webkit-animation-name: firstMove;
+	  animation-name: firstMove;
+	  -webkit-animation-duration:1s;
+	  animation-duration: 1s;
+	  -webkit-animation-iteration-count: 1;
+	  animation-iteration-count: 1;
+	  -webkit-animation-timing-function: ease;
+	  animation-timing-function: ease;
+	  -webkit-animation-fill-mode: forwards;
+	  animation-fill-mode: forwards;
+	}
+	.ol2 {
+	  -webkit-animation-name: secondMove;
+	  animation-name: secondMove;
+	  -webkit-animation-duration:1s;
+	  animation-duration: 1s;
+	  -webkit-animation-iteration-count: 1;
+	  animation-iteration-count: 1;
+	  -webkit-animation-timing-function: ease;
+	  animation-timing-function: ease;
+	  -webkit-animation-fill-mode: forwards;
+	  animation-fill-mode: forwards;
+	}
+	@keyframes firstMove {
+	  from {right: -460px;}
+	  to {right: 0px;}
+	}
+	@keyframes secondMove {
+	  from {right: 0px;}
+	  to {right: -460px;}
+}
