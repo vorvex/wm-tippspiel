@@ -147,9 +147,21 @@ body {
   color: #fff5ff;
   border-style: none;
   text-align: center;
-  font-size: 26px;
+  -webkit-text-align: center;
+  padding: 0px;
+  font-size: 22px;
   -webkit-appearance: none;
 }
+
+
+
+ input, input:before, input:after {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+     } 
 
 .tipp_submit {
   width: 74px;
@@ -168,14 +180,22 @@ body {
   padding: 4px 0px;
 }
 
+.team2 {
+  font-family: 'Orbitron', sans-serif;
+  height: 32px;
+  margin: 0 10px;
+  padding-top: 5px;
+  font-size: 20px;
+  width: 156px;
+}
+
 .team {
   font-family: 'Orbitron', sans-serif;
   height: 32px;
   margin: 0 10px;
-  padding-top: 7px;
+  padding-top: 5px;
   font-size: 20px;
 }
-
 .time_date {
   margin-top: 10px;
   margin-bottom: 5px;
@@ -213,6 +233,12 @@ body {
 
 @media only screen and (max-width: 540px) {
 
+ .team2 {
+  display: none;
+}
+.team {
+  display: block;
+}
   .group_header {
    font-size: 20px;
   }

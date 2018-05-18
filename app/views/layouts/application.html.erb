@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title><%= content_for?(:title) ? yield(:title) : "KEK | WM Tippspiel" %></title>
     <%= csrf_meta_tags %>
-
+    <%= render 'shared/favicons' %>
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <%= javascript_include_tag "application" %>
