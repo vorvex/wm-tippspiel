@@ -116,10 +116,12 @@ body {
   width: 74px;
 }
 
-.tipp_contianer input {
+input {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+
 
 .tipp_goal {
   width: 34%;
