@@ -4,6 +4,69 @@ body {
   color: #340030;
 }
 
+.welcome_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  height: 80vh;
+}
+
+.welcome_h1 {
+  font-family: OpenSans, sans-serif;
+  font-size: 24px;
+  color: #340030;
+  text-align: center;
+  -webkit-text-align: center;
+  margin: 10px auto;
+  max-width: 400px;
+}
+
+.welcome_h2 {
+  font-family: OpenSans, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #340030;
+  text-align: center;
+  -webkit-text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.welcome_image {
+  height: 180px;
+  width: 180px;
+  margin: 10px auto;
+}
+
+.welcome_button {
+  background: #8F2684;
+  border-radius: 8px;
+  padding: 6px auto;
+  width: 100%;
+  border-style: none;
+  height: 40px;
+  margin: 0 auto 10px auto;
+  max-width: 400px;
+}
+
+.welcome_button a {
+  padding: 6px auto;
+  font-family: OpenSans, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #FFFFFF;
+  line-height: 28px;
+  text-decoration: none;
+}
+
+.welcome_button:hover {
+  background: #B067A9;
+}
 
 .twitter-timeline {
   max-height: 500px;

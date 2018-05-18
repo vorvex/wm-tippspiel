@@ -39,10 +39,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">WM-Tippspiel</a>
+        <a class="navbar-brand" href="/">
+          <%= image_tag 'KEK-Tippspiel.png', :alt => "WM Tippspiel KEK Anwendungssysteme GmbH", :class => 'logo', height: '30px' %>
+        </a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Spiele", "/games"  %></li>
+            <li><%= link_to "Spiele", "/"  %></li>
             <li><%= link_to "Gruppenphase", "/groups"  %></li>
             <li><%= link_to "Spielstand", "/tabelle" %></li>
             <li><%= link_to "Anleitung", "/how-to-play" %></li>
