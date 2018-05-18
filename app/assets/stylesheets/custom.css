@@ -97,6 +97,14 @@ body {
   width: 74px;
   margin: 0 5px;
   justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: flex-center;
+  -ms-flex-align: center;
+   align-items: flex-center;
 }
 
 .game_tipp {
@@ -105,18 +113,28 @@ body {
 }
 
 .tipp_container {
+  display: flex;
   font-family: 'Orbitron', sans-serif;
   padding: 4px 5px 0px 5px;
   font-size: 26px;
   color: #FFF5FF;
   line-height: 30px;
   background: #474554;
-  border-radius: 2px;
+  border-style: none;
   heigth: 32px;
   width: 74px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: flex-center;
+  -ms-flex-align: center;
+  align-items: flex-center;
 }
 
-input {
+.tipp_container input {
+  -webkit-box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -124,11 +142,12 @@ input {
 
 
 .tipp_goal {
-  width: 34%;
+  width: 22px;
   background-color: transparent;
   border-style: none;
   text-align: center;
   font-size: 26px;
+  -webkit-appearance: none;
 }
 
 .tipp_submit {
