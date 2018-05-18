@@ -1,29 +1,37 @@
-<% @groups.each do |group| %>
-  <div class="group_container" >
-    <h2 class="group_header">Gruppe <%= group.name %></h2>
-    <table class="table table-hover" style="margin-bottom: 0px">
-      <thead>
-        <td class="col-md-1">Pos</td>
-        <td class="col-md-5">Land</td>
-        <td class="col-md-1 hidden-xs" style="text-align: center;">Spiele</td>
-        <td class="col-md-1 visible-xs" style="text-align: center;">Sp</td>
-        <td class=" hidden-xxs" style="text-align: center;">G U V</td>
-        <td class="col-md-1 hidden-xxs" style="text-align: center;">Tore</td>
-        <td class="col-md-1" style="text-align: right;">Pkt.</td>
-      </thead>
-      <tbody>
-        <% group.teams.order(position: :asc).each do |team| %>
-          <tr class="group_table">
-            <td class="col-md-1"><%= team.place %></td>
-            <td class="col-md-5 country"><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag', :size => '32x32', :style => 'margin-right: 10px;') %> <%= team.country %></td>
-            <td class="shortname"><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag', :size => '32x32', :style => 'margin-right: 10px;') %> <%= team.shortname %></td>
-            <td class="col-md-1" style="text-align: center;"><%= team.games %></td>
-            <td class="hidden-xxs" style="text-align: center;"><%= team.wins %> <%= team.draws %> <%= team.losses %></td>
-            <td class="col-md-1 hidden-xxs" style="text-align: center;"><%= team.goals %>:<%= team.goals_allowed %></td>
-            <td class="col-md-1" style="text-align: right;"><%= team.points %></td>
-          </tr>
-        <% end %>
-      </tbody>  
-    </table>
+<div class="row">
+  <div class="col-md-8">
+    <% @groups.each do |group| %>
+      <div style="margin-bottom: 20px">
+        <h2 class="group_header">Gruppe <%= group.name %></h2>
+        <table class="table table-hover" style="margin-bottom: 0px">
+          <thead>
+            <td class="col-md-1">Pos</td>
+            <td class="col-md-5">Land</td>
+            <td class="col-md-1 hidden-xs" style="text-align: center;">Spiele</td>
+            <td class="col-md-1 visible-xs" style="text-align: center;">Sp</td>
+            <td class=" hidden-xxs" style="text-align: center;">G U V</td>
+            <td class="col-md-1 hidden-xxs" style="text-align: center;">Tore</td>
+            <td class="col-md-1" style="text-align: right;">Pkt.</td>
+          </thead>
+          <tbody>
+            <% group.teams.order(position: :asc).each do |team| %>
+              <tr class="group_table">
+                <td class="col-md-1"><%= team.place %></td>
+                <td class="col-md-5 country"><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag', :size => '32x32', :style => 'margin-right: 10px;') %> <%= team.country %></td>
+                <td class="shortname"><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag', :size => '32x32', :style => 'margin-right: 10px;') %> <%= team.shortname %></td>
+                <td class="col-md-1" style="text-align: center;"><%= team.games %></td>
+                <td class="hidden-xxs" style="text-align: center;"><%= team.wins %> <%= team.draws %> <%= team.losses %></td>
+                <td class="col-md-1 hidden-xxs" style="text-align: center;"><%= team.goals %>:<%= team.goals_allowed %></td>
+                <td class="col-md-1" style="text-align: right;"><%= team.points %></td>
+              </tr>
+            <% end %>
+          </tbody>  
+        </table>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  <div class="col-md-4">
+    <%= render 'shared/tabelle' %>
+    <%= render 'shared/twitter' %>
+  </div>
+</div>

@@ -1,18 +1,15 @@
 class WelcomeController < ApplicationController
   def index
-    if user_signed_in?
-      redirect_to games_path
-    else
-      redirect_to signup_path
-    end
+    
   end
   
   def overview
     if user_signed_in?
       @upcoming_games = Game.upcoming(Time.now)
       @recently_finished_games = Game.recently_finished(Time.now)
+      @user = User.order(points: :desc).limit(5)
     else
-      redirect_to login_path
+      redirect_to willkommen_path
     end
   end
   
@@ -21,16 +18,21 @@ class WelcomeController < ApplicationController
       @upcoming_games = Game.upcoming(Time.now)
       @recently_finished_games = Game.recently_finished(Time.now)
     else
-      redirect_to login_path
+      redirect_to willkommen_path
     end
   end
   
-  def table
-    
+  def tabelle
+    @user = User.order(points: :desc)
   end
   
   def groups
-    @groups = Group.all
+    if user_signed_in?
+      @groups = Group.all
+      @user = User.order(points: :desc).limit(5)
+    else
+      redirect_to willkommen_path
+    end
   end
   
   def tipp_abgeben
@@ -54,6 +56,7 @@ class WelcomeController < ApplicationController
   def richtlinien
   
   end
+  
   private
   
   def tipp_params

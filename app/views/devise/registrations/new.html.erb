@@ -21,6 +21,12 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="true" required>
+          <p>Ich bin mit den <a target="_blank" href="/richtlinien">Nutzungsrichtlinien</a> dieser Seite einverstanden</p>
+        </label>
+      </div>
       <%= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary' %>
     <% end %>
   </div>

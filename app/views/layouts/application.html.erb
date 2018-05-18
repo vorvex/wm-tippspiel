@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "WM Tippspiel" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "KEK | WM Tippspiel" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -26,9 +26,9 @@
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ95235"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ95235"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -39,13 +39,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="navbar-brand" href="/">WM-Tippspiel</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Spiele", "/"  %></li>
+            <li><%= link_to "Spiele", "/games"  %></li>
             <li><%= link_to "Gruppenphase", "/groups"  %></li>
             <li><%= link_to "Spielstand", "/tabelle" %></li>
             <li><%= link_to "Anleitung", "/how-to-play" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          <li><% if user_signed_in? %><%= link_to "Ausloggen", destroy_user_session_path, method: :delete, class: "pull-right"  %><% else %><%= link_to "Anmelden", login_path, class: "pull-right"  %><% end %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Ausloggen", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Anmelden", login_path %></li>
+            <li><%= link_to "Registrieren", signup_path %></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -57,10 +62,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <footer>
         <p>
-          &copy; 2018 KEK Anwendungssysteme GmbH   |   
+          &copy; 2018 <%= link_to "KEK Anwendungssysteme GmbH", "http://www.kek-it.de", target: "_blank" %>   |   
           <%= link_to "Datenschutz", datenschutz_path, target: "_blank" %>   |   
           <%= link_to "Impressum", impressum_path, target: "_blank" %>   |   
-          <%= link_to "Nutzungs-Richtlinien", richtlinien_path, target: "_blank" %>
+          <%= link_to "Nutzungs-Richtlinien", richtlinien_path, target: "_blank" %>   |   Emoji artwork provided by 
+          <%= link_to "EmojiOne", "http://emojione.com" %>
         </p>
       </footer>
 
