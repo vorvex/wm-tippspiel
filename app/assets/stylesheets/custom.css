@@ -114,6 +114,9 @@ body {
   border-radius: 2px;
   heigth: 32px;
   width: 74px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
 }
 
 .tipp_goal {
