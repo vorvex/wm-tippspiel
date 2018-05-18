@@ -114,9 +114,11 @@ body {
   border-radius: 2px;
   heigth: 32px;
   width: 74px;
+}
+
+.tipp_contianer input {
   -webkit-appearance: none;
   -moz-appearance: none;
-
 }
 
 .tipp_goal {
@@ -133,6 +135,8 @@ body {
   border-style: none;
   background-color: lightgrey;
   color: #340030;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .tipp_bottom {
