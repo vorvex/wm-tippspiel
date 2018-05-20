@@ -1,10 +1,9 @@
-<h2>Derzeit Live</h2>
 <% @games.each do |game| %> 
-  <h5 class="time_date"><%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></h5>
+ 
   <div class="game_container">
     <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
     <span class="team"><%= game.team_one.shortname %></span>
-        <%= form_for(:html => {class: "game_tipp", role: "form"}, url: save_results_path(game.id) do |f| %>
+        <%= form_for(game, url: save_results_url(game.id), method: :post) do |f| %>
         <div class="tipp_outercontainer">
           <div class="tipp_container">
             <%= f.text_field :goals_team_one, placeholder: "0", class: "tipp_goal", :required => true %>

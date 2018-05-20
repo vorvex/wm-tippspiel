@@ -10,7 +10,7 @@
         <td class="col-md-1" style="text-align: right;">Pkt.</td>
       </thead>
       <tbody>
-        <% group.teams.order(position: :asc).each do |team| %>
+        <% group.teams.order('place asc').each do |team| %>
           <tr class="group_table">
             <td class="col-md-1"><%= team.place %></td>
             <td class="col-md-5 country"><%= image_tag('flags/' + team.flag_url + '.png', :alt => team.country, :class => 'flag', :size => '32x32', :style => 'margin-right: 10px;') %> <%= team.country %></td>

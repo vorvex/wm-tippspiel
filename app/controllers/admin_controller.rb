@@ -2,7 +2,7 @@ class AdminController < ApplicationController
 before_action :authenticate_admin
   
   def gameresults
-    @games = Game.all.limit(10)
+    @games = Game.where('round_id = ?', 1)
   end
   
   def add_goal_to_team_one
@@ -35,9 +35,8 @@ before_action :authenticate_admin
     
     def end_game
       @game = Game.find(params[:id])
-      @game.goals_team_one = params[:goals_team_one]
-      @game.goals_team_two = params[:goals_team_two]
       @game.status = "beendet"
+      @game.update(game_params)
       @game.save!
       Refresher.refresh_all
       redirect_to admin_path
@@ -54,4 +53,10 @@ before_action :authenticate_admin
       Refresher.refresh_all
       redirect_to admin_path
     end
+  
+  private
+  
+  def game_params
+    params.require(:game).permit(:goals_team_one, :goals_team_two, :status)
+  end
 end

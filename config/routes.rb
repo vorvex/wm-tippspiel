@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post 'goals_two/:id' => 'admin#add_goal_to_team_two', as: :goals_two
   post 'remove_goals_one/:id' => 'admin#remove_goal_for_team_one', as: :remove_goals_one
   post 'remove_goals_two/:id' => 'admin#remove_goal_for_team_two', as: :remove_goals_two
-  patch 'finish' => 'admin#end_game', as: :save_results
+  post 'finish/:id' => 'admin#end_game', as: :save_results
 
   get 'groups' => 'welcome#groups'
   get 'games' => 'welcome#games'
