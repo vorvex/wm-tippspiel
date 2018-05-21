@@ -141,13 +141,15 @@ class Refresher
       halbfinale = Round.find(4)
       finale34 = Round.find(5)
       finale = Round.find(6)
-      group_a = Gruppe.find(1)
-      group_b = Gruppe.find(2)
-      group_c = Gruppe.find(3)
-      group_d = Gruppe.find(4)
-      group_f= Gruppe.find(5)
-      group_g = Gruppe.find(6)
-      group_h = Gruppe.find(7)
+      gruppe_a = Group.find(1)
+      gruppe_b = Group.find(2)
+      gruppe_c = Group.find(3)
+      gruppe_d = Group.find(4)
+      gruppe_e = Group.find(5)
+      gruppe_f = Group.find(6)
+      gruppe_g = Group.find(7)
+      gruppe_h = Group.find(8)
+      
     case setting
       when "Achtelfinale"
         #Spiele Achtelfinale
@@ -280,4 +282,5 @@ class Refresher
         finale.games << game
     end
   end
+end
 end

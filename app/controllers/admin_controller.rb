@@ -9,6 +9,7 @@ before_action :authenticate_admin
   def settings_update
     @setting = Setting.first
     @setting.update(settings_params)
+    Refresher.refresh_round
     redirect_to admin_path
   end
   

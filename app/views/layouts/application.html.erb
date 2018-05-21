@@ -33,7 +33,11 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="preloader" class="preloader">
-      <%= image_tag 'kekwmlogo.png', :alt => "WM Tippspiel KEK Anwendungssysteme GmbH", :class => 'welcome_image'%>
+      <div class="lds-css ng-scope">
+        <div style="width:100%;height:100%" class="lds-ball">
+          <div></div>
+        </div>
+      </div>
     </div>
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -49,7 +53,7 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Spiele", "/"  %></li>
             <li><%= link_to "Gruppenphase", "/groups"  %></li>
-            <li><%= link_to "Spielstand", "/tabelle" %></li>
+            <li><%= link_to "Tabelle", "/tabelle" %></li>
             <li><%= link_to "Anleitung", "/how-to-play" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
