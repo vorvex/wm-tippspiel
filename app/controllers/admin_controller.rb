@@ -2,7 +2,14 @@ class AdminController < ApplicationController
 before_action :authenticate_admin
   
   def gameresults
-    @games = Game.where('round_id = ?', 1)
+    @games = Game.filter_by_round
+    @settings = Setting.first
+  end
+  
+  def settings_update
+    @setting = Setting.first
+    @setting.update(settings_params)
+    redirect_to admin_path
   end
   
   def add_goal_to_team_one
@@ -58,5 +65,9 @@ before_action :authenticate_admin
   
   def game_params
     params.require(:game).permit(:goals_team_one, :goals_team_two, :status)
+  end
+  
+  def settings_params
+    params.permit(:status)
   end
 end

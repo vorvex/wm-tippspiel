@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_14_154931) do
+ActiveRecord::Schema.define(version: 2018_05_20_204253) do
 
   create_table "games", force: :cascade do |t|
     t.integer "group_id"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2018_05_14_154931) do
   create_table "rounds", force: :cascade do |t|
     t.string "name"
     t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "status", default: "Gruppenphase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

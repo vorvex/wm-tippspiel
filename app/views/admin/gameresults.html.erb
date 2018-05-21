@@ -1,19 +1,34 @@
-<% @games.each do |game| %> 
- 
-  <div class="game_container">
-    <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
-    <span class="team"><%= game.team_one.shortname %></span>
-        <%= form_for(game, url: save_results_url(game.id), method: :post) do |f| %>
-        <div class="tipp_outercontainer">
-          <div class="tipp_container">
-            <%= f.text_field :goals_team_one, placeholder: "0", class: "tipp_goal", :required => true %>
-            <span>:</span>
-            <%= f.text_field :goals_team_two, placeholder: "0", class: "tipp_goal", :required => true %>
-          </div>
-          <%= f.submit "speichern", class: "tipp_submit"%>
-          </div>
-        <% end %>
-    <span class="team"><%= game.team_two.shortname %></span>
-    <%= image_tag('flags/' + game.team_two.flag_url + '.png', :alt => game.team_two.country, :class => 'flag', :size => '32x32') %>
+<div class="row">
+  <div class="col-md-8">
+    <% @games.each do |game| %> 
+      <div class="game_container">
+        <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
+        <span class="team"><%= game.team_one.shortname %></span>
+            <%= form_for(game, url: save_results_url(game.id), method: :post) do |f| %>
+            <div class="tipp_outercontainer">
+              <div class="tipp_container">
+                <%= f.text_field :goals_team_one, placeholder: "0", class: "tipp_goal", :required => true %>
+                <span>:</span>
+                <%= f.text_field :goals_team_two, placeholder: "0", class: "tipp_goal", :required => true %>
+              </div>
+              <%= f.submit "speichern", class: "tipp_submit"%>
+              </div>
+            <% end %>
+        <span class="team"><%= game.team_two.shortname %></span>
+        <%= image_tag('flags/' + game.team_two.flag_url + '.png', :alt => game.team_two.country, :class => 'flag', :size => '32x32') %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
+  <div class="col-md-4">
+    <h2>Runde bearbeiten</h2>
+    <%= form_for(@settings, url: settings_url(1), method: :post) do |f| %>
+      <div class="form-group">
+        <%= select_tag :status, "<option>Gruppenphase</option><option>Achtelfinale</option><option>Viertelfinale</option><option>Halbfinale</option><option>Finale 3. und 4. Platz</option><option>Finale</option>".html_safe, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Speichern", class: "btn btn-default"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+

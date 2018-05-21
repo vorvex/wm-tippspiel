@@ -72,4 +72,22 @@ class Game < ApplicationRecord
     where('status LIKE ?', "beendet")
   end
   
+  def self.filter_by_round()
+    setting = Setting.first.status
+    case setting
+      when "Gruppenphase"
+        current = 1
+      when "Achtelfinale"
+        current = 2
+      when "Viertelfinale"
+        current = 3
+      when "Halbfinale"
+        current = 4
+      when "Finale 3. und 4. Platz"
+        current = 5
+      when "Finale"
+        current = 6
+      end
+    where('round_id = ?', current)
+  end
 end

@@ -133,7 +133,151 @@ class Refresher
         end
       end
     end
-  
-  
+    
+    def refresh_round
+      setting = Setting.first.status
+      achtelfinale = Round.find(2)
+      viertelfinale = Round.find(3)
+      halbfinale = Round.find(4)
+      finale34 = Round.find(5)
+      finale = Round.find(6)
+      group_a = Gruppe.find(1)
+      group_b = Gruppe.find(2)
+      group_c = Gruppe.find(3)
+      group_d = Gruppe.find(4)
+      group_f= Gruppe.find(5)
+      group_g = Gruppe.find(6)
+      group_h = Gruppe.find(7)
+    case setting
+      when "Achtelfinale"
+        #Spiele Achtelfinale
+        game = Game.new( :gametime => '2018-06-30T20:00:00' )
+        game.stadium = Stadium.find_by_city('Sotschi')
+        game.team_one = gruppe_a.leader
+        game.team_two = gruppe_b.second_leader
+        game.save!
+
+        achtelfinale.games << game
+
+        game = Game.new( :gametime => '2018-06-30T16:00:00' )
+        game.stadium = Stadium.find_by_city('Kasan')
+        game.team_one = gruppe_c.leader
+        game.team_two = gruppe_d.second_leader
+        game.save!
+
+        achtelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-01T16:00:00' )
+        game.stadium = Stadium.find_by_city('Moskau (Luschniki)')
+        game.team_one = gruppe_b.leader
+        game.team_two = gruppe_a.second_leader
+        game.save!
+
+        achtelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-01T20:00:00' )
+        game.stadium = Stadium.find_by_city('Nischni Nowgorod')
+        game.team_one = gruppe_d.leader
+        game.team_two = gruppe_c.second_leader
+        game.save!
+
+        achtelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-02T16:00:00' )
+        game.stadium = Stadium.find_by_city('Samara')
+        game.team_one = gruppe_e.leader
+        game.team_two = gruppe_f.second_leader
+        game.save!
+
+        achtelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-02T20:00:00' )
+        game.stadium = Stadium.find_by_city('Rostow am Don')
+        game.team_one = gruppe_g.leader
+        game.team_two = gruppe_h.second_leader
+        game.save!
+
+        achtelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-03T16:00:00' )
+        game.stadium = Stadium.find_by_city('Sankt Petersburg')
+        game.team_one = gruppe_f.leader
+        game.team_two = gruppe_e.second_leader
+        game.save!
+
+        achtelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-03T20:00:00' )
+        game.stadium = Stadium.find_by_city('Moskau (Spartak)')
+        game.team_one = gruppe_h.leader
+        game.team_two = gruppe_g.second_leader
+        game.save!
+
+        achtelfinale.games << game
+      when "Viertelfinale"
+        game = Game.new( :gametime => '2018-07-06T17:00:00' )
+        game.stadium = Stadium.find_by_city('Nischni Nowgorod')
+        game.team_one = achtelfinale.winner_game(49)
+        game.team_two = achtelfinale.winner_game(50)
+        game.save!
+
+        viertelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-06T21:00:00' )
+        game.stadium = Stadium.find_by_city('Kasan')
+        game.team_one = achtelfinale.winner_game(53)
+        game.team_two = achtelfinale.winner_game(54)
+        game.save!
+
+        viertelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-07T16:00:00' )
+        game.stadium = Stadium.find_by_city('Samara')
+        game.team_one = achtelfinale.winner_game(55)
+        game.team_two = achtelfinale.winner_game(56)
+        game.save!
+
+        viertelfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-07T20:00:00' )
+        game.stadium = Stadium.find_by_city('Sotschi')
+        game.team_one = achtelfinale.winner_game(51)
+        game.team_two = achtelfinale.winner_game(52)
+        game.save!
+
+        viertelfinale.games << game
+      when "Halbfinale"
+        game = Game.new( :gametime => '2018-07-10T21:00:00' )
+        game.stadium = Stadium.find_by_city('Sank Petersburg')
+        game.team_one = viertelfinale.winner_game(57)
+        game.team_two = viertelfinale.winner_game(58)
+        game.save!
+
+        halbfinale.games << game
+
+        game = Game.new( :gametime => '2018-07-10T21:00:00' )
+        game.stadium = Stadium.find_by_city('Moskau (Luschniki)')
+        game.team_one = viertelfinale.winner_game(59)
+        game.team_two = viertelfinale.winner_game(60)
+        game.save!
+
+        halbfinale.games << game
+      when "Finale 3. und 4. Platz"
+        game = Game.new( :gametime => '2018-07-14T16:00:00' )
+        game.stadium = Stadium.find_by_city('Sank Petersburg')
+        game.team_one = halbfinale.loser_game(61)
+        game.team_two = halbfinale.loser_game(62)
+        game.save!
+
+        finale34.games << game
+      when "Finale"
+        game = Game.new( :gametime => '2018-07-14T16:00:00' )
+        game.stadium = Stadium.find_by_city('Moskau (Luschniki)')
+        game.team_one = halbfinale.winner_game(61)
+        game.team_two = halbfinale.winner_game(62)
+        game.save!
+
+        finale.games << game
+    end
   end
 end
