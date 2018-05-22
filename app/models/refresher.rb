@@ -76,7 +76,7 @@ class Refresher
 
     # Total number of goals per team is updated based on finished games
     def refresh_goals
-      @games = Game.finished
+      @games = Game.where('round_id = ?', 1).finished
       @teams = Team.all
 
       @teams.each do |team|
