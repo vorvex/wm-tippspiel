@@ -8,16 +8,9 @@ class Team < ApplicationRecord
   end
   
   def name_order()
-    x = self.shortname
-    y = x[0, 1]
-    y3 = y.ord
-    y5 = y3.to_i
-    y2 = x[1, 1]
-    y4 = y2.ord
-    y6 = y4.to_i
-    y7 = x[2, 1]
-    y8 = y7.to_i
-    z = y5 + y6 + y8
+    x = self.position
+    y = x[1, 1]
+    z = y.to_i
     return z
   end
   

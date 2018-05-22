@@ -23,7 +23,11 @@ class WelcomeController < ApplicationController
   end
   
   def tabelle
-    @user = User.order(points: :desc)
+    if user_signed_in?
+      @user = User.order(points: :desc)
+    else
+      redirect_to willkommen_path
+    end
   end
   
   def groups
@@ -60,6 +64,7 @@ class WelcomeController < ApplicationController
   private
   
   def tipp_params
-      params.require(:tipp).permit(:user_id, :game_id, :goals_one, :goals_two)
-    end
+    params.require(:tipp).permit(:user_id, :game_id, :goals_one, :goals_two)
+  end
+    
 end

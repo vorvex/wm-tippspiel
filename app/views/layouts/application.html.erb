@@ -58,6 +58,9 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+            <% if current_user.role_name === 'admin' %>
+            <li><%= link_to "Admin", admin_path %></li>
+            <% end %>
             <li><%= link_to "Ausloggen", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Anmelden", login_path %></li>
@@ -73,11 +76,14 @@
           <%= yield %>
 
       <footer>
+        <% if current_page?(:controller=>"welcome", :action=>'index') %>
+          <p>*die genauen Bestimmungen entnehmen Sie bitte den Nutzungsrichtlinien</p>
+        <% end %>
         <p>
           &copy; 2018 <%= link_to "KEK Anwendungssysteme GmbH", "http://www.kek-it.de", target: "_blank" %>   |   
           <%= link_to "Datenschutz", datenschutz_path, target: "_blank" %>   |   
           <%= link_to "Impressum", impressum_path, target: "_blank" %>   |   
-          <%= link_to "Nutzungs-Richtlinien", richtlinien_path, target: "_blank" %>   |   Emoji artwork provided by 
+          <%= link_to "Nutzungsrichtlinien", richtlinien_path, target: "_blank" %>   |   Emoji artwork provided by 
           <%= link_to "EmojiOne", "http://emojione.com" %>
         </p>
       </footer>
