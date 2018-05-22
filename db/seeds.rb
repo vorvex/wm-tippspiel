@@ -1,6 +1,6 @@
 #Admin erstellen
 
-u = User.create(:email => "admin@kek-it.de", :nickname => "kalle", :password => "topsecret", :password_confirmation => "topsecret", :role_name => 'admin')
+u = User.create(:email => "admin@kek-it.de", :nickname => "kalle", :password => "topsecret", :password_confirmation => "topsecret", :role_name => 'admin', :confirmed_at => Time.now)
 s = Setting.create(:status => "Gruppenphase")
 #Gruppen erstellen
 gruppe_a = Group.create!(:name => 'A')
