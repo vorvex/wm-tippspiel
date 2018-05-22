@@ -76,9 +76,6 @@
           <%= yield %>
 
       <footer>
-        <% if current_page?(:controller=>"welcome", :action=>'index') %>
-          <p>*die genauen Bestimmungen entnehmen Sie bitte den Nutzungsrichtlinien</p>
-        <% end %>
         <p>
           &copy; 2018 <%= link_to "KEK Anwendungssysteme GmbH", "http://www.kek-it.de", target: "_blank" %>   |   
           <%= link_to "Datenschutz", datenschutz_path, target: "_blank" %>   |   
