@@ -15,7 +15,7 @@
     -ms-flex-align: center;
     align-items: center;
     z-index: 100000000;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.5);
     top: 0;
 }
 

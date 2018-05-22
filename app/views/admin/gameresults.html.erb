@@ -21,6 +21,11 @@
   </div>
   <div class="col-md-4">
     <h2>Runde bearbeiten</h2>
+    <p><strong>Aktuelle Runde: <%= @settings.status %></strong><br/>
+      <strong>Hinweis:</strong>
+      Die in der Auswahl angezeigte Runde ist immer die Gruppenphase und nicht die aktuelle Runde. Vor abspeichern einer neuen Runde müssen alle Spiele zuvor erfolgter Runden abgeschlossen sein und nach der Gruppenphase die Gruppentabellen mit den Tabellen der FIFA abgeglichen sein. Sollten Probleme auftretten bitte an JH oder LD wenden. Erst nach abgleich und überprüfen die neue Runde speichern. Runden nur einmal speichern, da sonst Dupplikate erstellt werden.<br/>
+    <br/> Nach dem abpeichern einer Runde die erstellten Spiele mit den reellen Partien vergleichen.
+    </p>
     <%= form_for(@settings, url: settings_url(1), method: :post) do |f| %>
       <div class="form-group">
         <%= select_tag :status, "<option>Gruppenphase</option><option>Achtelfinale</option><option>Viertelfinale</option><option>Halbfinale</option><option>Finale 3. und 4. Platz</option><option>Finale</option>".html_safe, class: 'form-control' %>

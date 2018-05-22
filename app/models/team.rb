@@ -15,7 +15,9 @@ class Team < ApplicationRecord
     y2 = x[1, 1]
     y4 = y2.ord
     y6 = y4.to_i
-    z = y5 + y6
+    y7 = x[2, 1]
+    y8 = y7.to_i
+    z = y5 + y6 + y8
     return z
   end
   

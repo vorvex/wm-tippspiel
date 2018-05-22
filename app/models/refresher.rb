@@ -69,7 +69,7 @@ class Refresher
       @teams = Team.all
 
       @teams.each do |team|
-        team.games = @games.where("team_one = ? or team_two = ?", team.id, team.id).size
+        team.games = @games.where("team_one = ? or team_two = ?", team.id, team.id).where('round_id = ?', 1).size
         team.save!
       end
     end
@@ -272,7 +272,7 @@ class Refresher
         game.save!
 
         finale34.games << game
-      when "Finale"
+
         game = Game.new( :gametime => '2018-07-14T16:00:00' )
         game.stadium = Stadium.find_by_city('Moskau (Luschniki)')
         game.team_one = halbfinale.winner_game(61)

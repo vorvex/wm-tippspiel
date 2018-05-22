@@ -26,6 +26,11 @@
           <input type="checkbox" value="true" required>
           <p>Ich bin mit den <a target="_blank" href="/richtlinien">Nutzungsrichtlinien</a> dieser Seite einverstanden</p>
         </label>
+          <p style="font-weight: 400;">Zur Benutzung des Tippspiels ist die Verwendung von Cookies Notwendig. Mehr Informationen zum Datenschutz finden Sie <a target="_blank" href="/datenschutz">hier</a>.</p>
+        <label>
+          <input type="checkbox" value="true" required>
+          <p>Ich stimme der Verwendung von Cookies zu.</p>
+        </label>
       </div>
       <%= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary' %>
     <% end %>

@@ -1,4 +1,21 @@
-<%= form_for(@tipp, :html => {class: "tipp", role: "form"}, url: tipp_abgeben_path) do |f| %>
-      <%= f.text_field :goals_one, class: "tipp_tor", placeholder: "0" %>
-      <%= f.text_field :goals_two, class: "tipp_tor", placeholder: "0" %>
-<% end %>
+<div class="row">
+  <div class="col-md-8">
+    <div class="game_container">
+      <%= image_tag('flags/' + @game.team_one.flag_url + '.png', :alt => @game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
+      <span class="team"><%= @game.team_one.shortname %></span>
+      <%= form_for(@tipp, url: tipp_abgeben_url, method: :post) do |f| %>
+      <div class="tipp_outercontainer">
+        <div class="tipp_container">
+          <%= f.text_field :goals_one, class: "tipp_goal", placeholder: "0" %>
+          <span>:</span>
+          <%= f.text_field :goals_two, class: "tipp_goal", placeholder: "0" %>
+          </div>
+          <%= f.submit "speichern", class: "tipp_submit"%>
+      </div>
+      <% end %>
+      <span class="team"><%= @game.team_two.shortname %></span>
+      <%= image_tag('flags/' + @game.team_two.flag_url + '.png', :alt => @game.team_two.country, :class => 'flag', :size => '32x32') %>
+    </div>
+  </div>
+</div>
+
