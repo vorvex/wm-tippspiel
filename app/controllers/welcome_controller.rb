@@ -42,8 +42,11 @@ class WelcomeController < ApplicationController
   def tipp_abgeben
     @tipp = Tipp.new(tipp_params)
     @game = @tipp.game
-    if @game.gametime < Time.now  
+    if @game.gametime > Time.now  
       @tipp.save
+      flash[:success] = "Tipp erfolgreich abgegeben"
+    else
+      flash[:warning] = "Tipp nicht gespeichert"
     end
     redirect_to root_path
   end

@@ -1,0 +1,22 @@
+<% if game.status === 'beendet' %>  
+  <span class="game_ergebnis"><%= game.goals_team_one %> : <%= game.goals_team_two %></span>
+<% elsif game.status === 'gestartet' %>
+  <span class="game_during">- : -</span>
+<% elsif @tipps.find_by_game_id(game.id) %>
+  <span class="game_before">- : -</span>
+<% else %>
+ <% if user_signed_in? && game.status != 'beendet' && game.status != 'gestartet' && !@tipps.find_by_game_id(game.id) %>
+   <%= form_for(@tipp, :html => {class: "game_tipp", role: "form"}, url: tipp_abgeben_url) do |f| %>
+     <%= f.hidden_field :game_id, value: game.id %>
+     <%= f.hidden_field :user_id, value: current_user.id %>
+     <div class="tipp_outercontainer">
+        <div class="tipp_container">
+        <%= f.text_field :goals_one, placeholder: "0", class: "tipp_goal", :required => true %>
+        <span>:</span>
+        <%= f.text_field :goals_two, placeholder: "0", class: "tipp_goal", :required => true %>
+        </div>
+        <%= f.submit "Tippen", class: "tipp_submit"%>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

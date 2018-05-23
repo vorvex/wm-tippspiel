@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'datenschutz' => 'welcome#datenschutz'
   get 'richtlinien' => 'welcome#richtlinien'
   get 'willkommen' => 'welcome#index'
+  get 'problem_melden' => 'welcome#problem_melden'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
