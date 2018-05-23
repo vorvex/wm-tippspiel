@@ -7,7 +7,25 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="msapplication-tap-highlight" content="no"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title><%= content_for?(:title) ? yield(:title) : "KEK | WM Tippspiel" %></title>
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <title>KEK WM Tippspiel 2018</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Das Tippspiel für die WM 2018 von KEK Anwendungssysteme GmbH. Mitspielen und 500€ für eine wohltätige Organisation Ihrer Wahl gewinnen.">
+    <meta name="image" content="https://kek-wmtipp.herokuapp.com/og/OG1.jpg">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="KEK WM Tippspiel 2018">
+    <meta itemprop="description" content="Das Tippspiel für die WM 2018 von KEK Anwendungssysteme GmbH. Mitspielen und 500€ für eine wohltätige Organisation Ihrer Wahl gewinnen.">
+    <meta itemprop="image" content="https://kek-wmtipp.herokuapp.com/og/OG1.jpg">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="KEK WM Tippspiel 2018">
+    <meta name="og:description" content="Das Tippspiel für die WM 2018 von KEK Anwendungssysteme GmbH. Mitspielen und 500€ für eine wohltätige Organisation Ihrer Wahl gewinnen.">
+    <meta name="og:image" content="https://kek-wmtipp.herokuapp.com/og/OG3.jpg">
+    <meta name="og:url" content="https://kek-wmtipp.herokuapp.com/">
+    <meta name="og:site_name" content="KEK Tippspiel">
+    <meta name="og:locale" content="de">
+    <meta name="og:type" content="website">
+    <title><%= content_for?(:title) ? yield(:title) : "KEK Tippspiel" %></title>
     <%= csrf_meta_tags %>
     <%= render 'shared/favicons' %>
     <%= stylesheet_link_tag "application", :media => "all" %>
