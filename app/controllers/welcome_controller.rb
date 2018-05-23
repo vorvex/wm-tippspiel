@@ -41,7 +41,10 @@ class WelcomeController < ApplicationController
   
   def tipp_abgeben
     @tipp = Tipp.new(tipp_params)
-    @tipp.save
+    @game = @tipp.game
+    if @game.gametime < Time.now  
+      @tipp.save
+    end
     redirect_to root_path
   end
   
