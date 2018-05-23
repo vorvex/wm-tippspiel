@@ -73,7 +73,7 @@ div.WordSection1
       </p>
       <p style='margin:0cm;margin-bottom:.0001pt;line-height:10.5pt'>
         <span style='font-size:10.0pt;font-family:"Helvetica",sans-serif;color:black'>
-        <span style='color:black'><%= @resource.email %></span>
+        <span style='color:#8F2684'><%= @resource.email %></span>
         </span>
         <span style='font-size:9.0pt;font-family:"Helvetica",sans-serif;color:black'><o:p></o:p></span>
       </p>
@@ -84,7 +84,7 @@ div.WordSection1
       <p class=MsoNormal>
         <span style='font-size:10.0pt;font-family:"Helvetica",sans-serif;color:#474554'>Bitte folgen Sie dem Untenstehenden Link, um Ihr Konto zu bestätigen und somit direkt ins Tippspiel zu starten:<o:p></o:p></span>
       </p>
-      <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Helvetica",sans-serif;color:#474554'><%= link_to 'Konto bestätigen', confirmation_url(@resource, confirmation_token: @token, locale: I18n.locale) %></span>
+      <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Helvetica",sans-serif;color:#474554'><%= link_to '<span style='color:#8F2684'>Konto bestätigen</span>'.html_safe, confirmation_url(@resource, confirmation_token: @token, locale: I18n.locale) %></span>
       </p>
       <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Helvetica",sans-serif;color:#474554'><o:p>&nbsp;</o:p></span></p>
       <p style='margin:0cm;margin-bottom:.0001pt;line-height:12.75pt'>
