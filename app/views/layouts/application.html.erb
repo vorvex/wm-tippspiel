@@ -69,9 +69,11 @@
         </a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Spiele", "/"  %></li>
-            <li><%= link_to "Gruppenphase", "/groups"  %></li>
-            <li><%= link_to "Tabelle", "/tabelle" %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Spiele", "/"  %></li>
+              <li><%= link_to "Gruppenphase", "/groups"  %></li>
+              <li><%= link_to "Tipp-Tabelle", "/tabelle" %></li>
+            <% end %>
             <li><%= link_to "Anleitung", "/how-to-play" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

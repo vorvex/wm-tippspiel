@@ -3,7 +3,7 @@
     <div class="game_container">
       <%= image_tag('flags/' + @game.team_one.flag_url + '.png', :alt => @game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
       <span class="team"><%= @game.team_one.shortname %></span>
-      <%= form_for(@tipp, url: tipp_abgeben_url, method: :post) do |f| %>
+      <%= form_for(@tipp, url: update_tipp_url, method: :post) do |f| %>
       <div class="tipp_outercontainer">
         <div class="tipp_container">
           <%= f.text_field :goals_one, class: "tipp_goal", placeholder: "0" %>

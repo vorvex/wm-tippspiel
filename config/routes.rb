@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   end    
   
   post 'tipp_abgeben' => 'welcome#tipp_abgeben'
-  get 'tipp/:id' => 'tipp#edit'
+  get 'tipp/:id' => 'tipp#edit', as: :tipp_edit
+  post 'tipp/:id' => 'tipp#update', as: :update_tipp
   get 'admin' => 'admin#gameresults'
   post 'goals_one/:id' => 'admin#add_goal_to_team_one', as: :goals_one
   post 'goals_two/:id' => 'admin#add_goal_to_team_two', as: :goals_two

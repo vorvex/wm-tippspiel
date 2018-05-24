@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-md-8">
     <div>
-    <h2 class="group_header">Partien</h2>  
+    <h2 class="group_header">Spiele</h2>  
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcomming" role="tab" data-toggle="tab">Bevorstehend</a></li>
-      <li role="presentation"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Vor kurzem Beendet</a></li>
+      <li role="presentation"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Vor kurzem beendet</a></li>
 
     </ul>
 
@@ -43,6 +43,7 @@
     </div>
   </div>
   <div class="col-md-4">
+    <%= render 'shared/explainer_homescreen' %>
     <%= render 'shared/tabelle' %>
     <%= render 'shared/twitter' %>
   </div>

@@ -1,0 +1,36 @@
+<div class="visible-xs visible-sm">
+  <!-- Large modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" style="margin: 10px auto 20px auto; width: 100%;">Tippspiel auf Ihrem Homescreen</button>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> <h4 class="modal-title" id="myLargeModalLabel">Tippspiel auf den Homescreen</h4> </div>
+        <div class="modal-body">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#iphone" aria-controls="iphone" role="tab" data-toggle="tab">iPhone</a></li>
+            <li role="presentation"><a href="#android" aria-controls="android" role="tab" data-toggle="tab">Android</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="iphone">
+              <h4><strong>Schritt 1:</strong><br/>Drücken Sie in der Fußzeile ihres mobilen Browsers das <%= render 'shared/svg/share_ios' %>-Symbol</h4>
+              <h4><strong>Schritt 2:</strong><br/>Wählen Sie nun aus dem untersten Menü den zum Homescreen hinzufügen Button</h4>
+              <%= image_tag('homescreen.jpg', :alt => 'Homescreen Explainer iOS', :style => 'width: 100%') %>
+              <h4><strong>Schritt 3:</strong><br/>Titel nach belieben anpassen und hinzufügen drücken</h4>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="android">
+              <h4><strong>Schritt 1:</strong><br/>Suchen sie in das ihrem Browser das <%= render 'shared/svg/settings_android' %> -Symbol</h4>
+              <h4><strong>Schritt 2:</strong><br/>Wählen Sie nun aus den Menü den zum Startbildschirm hinzufügen Button</h4>
+              <h4><strong>Schritt 3:</strong><br/>Titel nach belieben anpassen und hinzufügen drücken</h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

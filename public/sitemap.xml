@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/willkommen</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/how-to-play</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/login</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/signup</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/datenschutz</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/impressum</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/richtlinien</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/problem_melden</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/users/sign_up</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/users/password/new</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/users/confirmation/new</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kek-wmtipp.herokuapp.com/users/sign_in</loc>
+  <lastmod>2018-05-24T11:53:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
