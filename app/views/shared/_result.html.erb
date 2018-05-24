@@ -1,0 +1,12 @@
+<div class="col-md-12" style="display: inline-block;">
+  <% if params[:action] == 'search' %>
+  <%= bootstrap_flash %>
+  <% end %>
+</div>
+<% if @search %>
+<div class="well results-block col-md-12" style="display: inline-block;">
+  <strong>Position: </strong> <%= @search.position %>
+  <strong>Name: </strong> <%= @search.nickname %>
+  <strong>Punkte: </strong> <%= @search.points %>
+</div>
+<% end %>

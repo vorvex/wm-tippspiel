@@ -15,7 +15,7 @@
           <td class="col-md-3" style="text-align: right;"><%= user.points %></td>
         </tr>
       <% end %>
-      <% if current_user.position > 5 && !current_page?(action: 'tabelle') %>
+      <% if !current_page?(action: 'tabelle') %>
       <tr class="user_table" style="font-weight: 500;">
         <td class="col-md-1"><%= current_user.position %></td>
         <td class="col-md-8"><%= current_user.nickname %></td>
@@ -26,7 +26,8 @@
   </table>
     <% if !current_page?(action: 'tabelle') %>
       <%= link_to 'Komplette Tipp Tabelle anzeigen', tabelle_path %>
+    <% else %>
+      <%= will_paginate @user, renderer: BootstrapPagination::Rails %>
     <% end %>
 </div>
-
 <% end %>

@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   post 'remove_goals_two/:id' => 'admin#remove_goal_for_team_two', as: :remove_goals_two
   post 'finish/:id' => 'admin#end_game', as: :save_results
   post 'runde/:id' => 'admin#settings_update', as: :settings
-
+  
+  get 'user_lookup' => 'welcome#search'
   get 'groups' => 'welcome#groups'
   get 'games' => 'welcome#games'
   get 'tabelle' => 'welcome#tabelle'

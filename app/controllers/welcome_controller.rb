@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+
   def index
     
   end
@@ -24,7 +25,7 @@ class WelcomeController < ApplicationController
   
   def tabelle
     if user_signed_in?
-      @user = User.order(points: :desc)
+      @user = User.order(points: :desc).paginate(:page => params[:page], :per_page => 10)
     else
       redirect_to willkommen_path
     end
@@ -49,6 +50,20 @@ class WelcomeController < ApplicationController
       flash[:warning] = "Tipp nicht gespeichert"
     end
     redirect_to root_path
+  end
+  
+  def search
+    def search
+    if params[:nickname].blank?
+      flash.now[:danger] = "Sie haben keinen Namen eigegeben"
+    else
+      @search = User.find_by_nickname(params[:nickname])
+      flash.now[:danger] = "Der von Ihnen eingetragene Nickname existiert nicht" unless @search
+    end
+    respond_to do |format|
+      format.js { render partial: 'shared/result' }
+    end
+  end
   end
   
   def how_to_play

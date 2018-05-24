@@ -1,0 +1,14 @@
+<h2 class="group_header">Nutzer Suchen</h2>
+<%= form_tag user_lookup_path, remote: true, method: :get, id: "user-lookup-form" do %>
+<div class="input-group" style="margin: 20px 0;">
+  <%= text_field_tag :nickname, params[:nickname], placeholder: "Nickname suchen", autofocus: true, class: "form-control" %>
+  <span class="input-group-btn">
+    <%= button_tag(type: :submit, class: "btn btn-default") do %>
+        Suchen
+      <% end %>
+  </span>
+</div><!-- /input-group -->      
+<% end %>
+<div id="results">
+<%= render 'shared/result' %>  
+</div>
