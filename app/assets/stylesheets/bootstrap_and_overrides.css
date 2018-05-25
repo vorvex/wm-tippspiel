@@ -50,5 +50,11 @@ a {
 
 .pagination>li>a, .pagination>li>span {
     color: #8f2684;
+}
 
+.navbar-default {
+    background-color: #ffffff;
+    border-color: #e7e7e7;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(225, 232, 237, 0.6);
+    box-shadow: 0px 1px 3px 0px rgba(225, 232, 237, 0.6);
 }
