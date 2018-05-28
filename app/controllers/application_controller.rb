@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :set_locale, :default, :refresh
+  before_action :set_locale, :default, :refresh, :airtable
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :authenticate_admin
   
@@ -29,6 +29,19 @@ class ApplicationController < ActionController::Base
   def refresh
     Refresher.game_status
     Refresher.refresh_place
+  end
+  
+  def airtable
+    @client = Airtable::Client.new("keyvWznotKodlPQvx")
+    @table = @client.table("appGS9BVcInOfNwnL", "User")
+    users = User.all.collect { |obj| obj.id }
+    records = @table.all.collect { |obj| obj.user_id }
+    missing = users - records
+    missing.each do |user|
+      u = User.find(user)
+      record = Airtable::Record.new(:user_id => u.id, :email => u.email, :nickname => u.nickname)
+      @table.create(record)
+    end  
   end
 protected
 
