@@ -32,7 +32,8 @@ class ApplicationController < ActionController::Base
   end
   
   def airtable
-    @client = Airtable::Client.new("keyvWznotKodlPQvx")
+    key = Rails.application.secrets.airtable_key
+    @client = Airtable::Client.new(key)
     @table = @client.table("appGS9BVcInOfNwnL", "User")
     users = User.all.collect { |obj| obj.id }
     records = @table.all.collect { |obj| obj.user_id }
