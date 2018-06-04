@@ -6,7 +6,7 @@ class Round < ApplicationRecord
   belongs_to :team_two, :class_name => "Team", :foreign_key => "team_two"
   
   def winner_game(game) 
-    @game = Game.find(game-1)
+    @game = Game.find(game)
     if @game.goals_team_one > @game.goals_team_two
       @game.team_one
     else
@@ -14,7 +14,7 @@ class Round < ApplicationRecord
     end
   end
   def loser_game(game) 
-    @game = Game.find(game-1)
+    @game = Game.find(game)
     if @game.goals_team_one < @game.goals_team_two
       @game.team_one
     else

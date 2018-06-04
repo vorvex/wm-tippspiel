@@ -66,6 +66,10 @@ class WelcomeController < ApplicationController
   end
   end
   
+  def turnierbaum
+    
+  end
+
   def how_to_play
   
   end

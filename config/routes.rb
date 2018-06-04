@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'groups' => 'welcome#groups'
   get 'games' => 'welcome#games'
   get 'tabelle' => 'welcome#tabelle'
+  get 'turnierbaum' => 'welcome#turnierbaum'
   get 'how-to-play' => 'welcome#how_to_play'
   get 'impressum' => 'welcome#impressum'
   get 'datenschutz' => 'welcome#datenschutz'
