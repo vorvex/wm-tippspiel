@@ -386,7 +386,13 @@ body {
   .shortname {
     display: block !important;
     font-family: 'Orbitron', sans-serif;
-  } 
+  }
+  .welcome_co {
+    min-height: 110px;
+  }
+  .welcome_logo {
+    min-height: 70px;
+  }
 }
 
 @media only screen and (min-width: 540px) {
@@ -671,3 +677,20 @@ body {
 	  to {right: -460px;}
 }
 
+.welcome_logo {
+  width: 100%; 
+  max-width: 400px; 
+  margin: 0px auto 10px auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+.welcome_co {
+  width: 100%; 
+  max-width: 400px; 
+  margin: 10px auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
