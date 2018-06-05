@@ -92,6 +92,7 @@ body {
   justify-content: center;
   margin-bottom: 50px;
   text-align: center; 
+  min-height: 80vh;
 }
 
 .welcome_h1 {
