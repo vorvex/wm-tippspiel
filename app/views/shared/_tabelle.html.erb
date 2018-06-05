@@ -30,7 +30,7 @@
     </tbody>  
   </table>
     <% if !current_page?(action: 'tabelle') %>
-      <%= link_to 'Komplette Tipp Tabelle anzeigen', tabelle_path %>
+      <%= link_to 'Komplette Tipp-Tabelle anzeigen', tabelle_path %>
     <% else %>
       <%= will_paginate @user, renderer: BootstrapPagination::Rails %>
     <% end %>
