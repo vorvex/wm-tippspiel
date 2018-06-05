@@ -63,3 +63,8 @@ a {
    font-size: 16px;
 
 }
+
+tab-pane {
+  max-height: 600px;
+  overflow-y: scroll;
+}

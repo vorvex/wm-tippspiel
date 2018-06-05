@@ -687,3 +687,8 @@ body {
   flex-direction: column; 
   align-items: center;
 }
+
+#alle {
+  height: 600px
+    
+}
