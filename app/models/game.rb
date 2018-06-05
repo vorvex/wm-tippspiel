@@ -50,7 +50,7 @@ class Game < ApplicationRecord
   
   def self.upcoming(time)
     if self.where(:gametime => time+7200..time+180000).empty?
-      order('gametime ASC').limit(6)
+      order('gametime ASC').limit(7)
     else
       where(:gametime => time+7200..time+180000).order('gametime ASC')
     end

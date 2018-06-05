@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
       @upcoming_games = Game.upcoming(Time.now)
       @recently_finished_games = Game.recently_finished(Time.now)
       @user = User.order(points: :desc).limit(5)
+      @all_games = User.paginate(:page => params[:page], :per_page => 10)
     else
       redirect_to willkommen_path
     end
