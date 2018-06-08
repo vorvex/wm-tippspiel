@@ -15,7 +15,7 @@
           <td class="col-md-3" style="text-align: right;"><%= user.points %></td>
         </tr>
       <% end %>
-      <% if !@user.find(current_user.id)%>
+      <% if !@user.include?(current_user.id) && !current_page?(action: 'tabelle') %>
       <tr class="user_table" style="font-weight: 500;">
         <td class="col-md-1"></td>
         <td class="col-md-8">...</td>
