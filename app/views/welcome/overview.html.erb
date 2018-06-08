@@ -6,22 +6,21 @@
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcomming" role="tab" data-toggle="tab">Bevorstehend</a></li>
       <li role="presentation"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Vor kurzem beendet</a></li>
-      <li role="presentation"><a href="#alle" aria-controls="alle" role="tab" data-toggle="tab">Alle Spiele</a></li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content" style="min-height: 300px;">
       <div role="tabpanel" class="tab-pane active" id="upcoming">
         <%= render 'shared/upcoming' %>
+        <div id="link_alle">
+          <%= link_to "Alle Spiele", games_path, id: "link_alle" %>  
+        </div>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="recent">
         <%= render 'shared/recently_finished' %>
       </div>
       
-      <div role="tabpanel" class="tab-pane" id="alle">
-        <%= render 'shared/alle_spiele' %>
-      </div>
     </div>
       
     </div>

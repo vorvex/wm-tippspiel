@@ -17,8 +17,8 @@ class WelcomeController < ApplicationController
   
   def games
     if user_signed_in?
-      @upcoming_games = Game.filter_by_round.upcoming(Time.now)
-      @recently_finished_games = Game.recently_finished(Time.now)
+      @all_games = Game.all
+      @user = User.order(points: :desc).limit(5)
     else
       redirect_to willkommen_path
     end
@@ -50,7 +50,7 @@ class WelcomeController < ApplicationController
     else
       flash[:warning] = "Tipp nicht gespeichert"
     end
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
   
   def search

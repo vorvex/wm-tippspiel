@@ -49,10 +49,10 @@ class Game < ApplicationRecord
 
   
   def self.upcoming(time)
-    if self.where(:gametime => time+7200..time+180000).empty?
-      order('gametime ASC').limit(7)
+    if self.where(:gametime => time+7200..time+180000).count < 7
+      where('status IS NULL').order('gametime ASC').limit(7)
     else
-      where(:gametime => time+7200..time+180000).order('gametime ASC')
+      where('status IS NULL').where(:gametime => time+7200..time+180000).order('gametime ASC')
     end
   end
   

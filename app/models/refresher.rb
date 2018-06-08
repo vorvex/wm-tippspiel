@@ -7,7 +7,7 @@ class Refresher
     @game.each do |game|
       unless game.status === 'beendet'
         if game.gametime <= @time
-          game.status == 'gestartet'
+          game.status = 'gestartet'
           game.save!
         end
       end

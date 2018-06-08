@@ -692,3 +692,9 @@ body {
   height: 600px;
   overflow-y: scroll;  
 }
+
+#link_alle {
+  margin: 10px 0;
+  text-align: center;
+  width: 100%;
+}
