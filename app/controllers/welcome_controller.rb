@@ -17,7 +17,7 @@ class WelcomeController < ApplicationController
   
   def games
     if user_signed_in?
-      @all_games = Game.all
+      @all_games = Game.order(gametime: :asc)
       @user = User.order(points: :desc).limit(5)
     else
       redirect_to willkommen_path
