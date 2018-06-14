@@ -3,7 +3,7 @@ class Refresher
     
     def game_status
       @game = Game.all
-      @time = Time.now
+      @time = Time.now+7200
     @game.each do |game|
       unless game.status === 'beendet'
         if game.gametime <= @time
