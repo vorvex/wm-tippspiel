@@ -88,6 +88,6 @@ class Game < ApplicationRecord
       when "Finale"
         current = 6
       end
-    where('round_id = ?', current)
+    where('round_id = ?', current).order(:gametime :asc)
   end
 end
