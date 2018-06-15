@@ -59,8 +59,7 @@ class Refresher
                              (game_goals_one - game_goals_two == goals_one - goals_two)
       # Nur Tendenz richtig
       return points += 1 if ((game_goals_one > game_goals_two && goals_one > goals_two) ||
-              (game_goals_one < game_goals_two && goals_one <= goals_two)
-      )
+              (game_goals_one < game_goals_two && goals_one < goals_two))
       points
     end
 
