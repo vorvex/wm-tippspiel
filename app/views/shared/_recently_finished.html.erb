@@ -14,7 +14,7 @@
   <% if @tipps.find_by_game_id(game.id) %>
   <div class="tipp_bottom">
     <p> Ihr Tipp: <%= @tipps.find_by_game_id(game.id).goals_one %> : <%= @tipps.find_by_game_id(game.id).goals_two %> 
-    <%= @tipps.find_by_game_id(game.id).points %> Punkt<%= 'e' unless @tipps.find_by_game_id(game.id).points === 1 %>
+    <%= @tipps.find_by_game_id(game.id).points %> Punkte
     </p>
   </div>
   <% end%>
