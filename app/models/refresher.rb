@@ -54,6 +54,7 @@ class Refresher
       return points += 5 if game_goals_one == goals_one && game_goals_two == goals_two
       # Tendenz und Torverhältnis richtig
       return points += 3 if ((game_goals_one > game_goals_two && goals_one > goals_two) ||
+                             (game_goals_one === game_goals_two && goals_one === goals_two) ||
                              (game_goals_one < game_goals_two && goals_one < goals_two)) &&
                              (game_goals_one - game_goals_two == goals_one - goals_two)
       # Nur Tendenz richtig
