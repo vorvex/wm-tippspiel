@@ -58,7 +58,7 @@ class Game < ApplicationRecord
   
   def self.recently_finished(time)
     if self.where(:gametime => time+1800..time-180000).empty?
-      where('status LIKE ?', "beendet").order('gametime ASC').limit(6)
+      where('status LIKE ?', "beendet").order('gametime DSC').limit(6)
     else
       where(:gametime => time+1800..time-180000).where('status LIKE ?', "beendet").order('gametime ASC')
     end
