@@ -397,6 +397,10 @@ body {
 	  .ol-contact-container {
 		display: none;
 	  }
+  #twitter {
+  max-width: calc(100vw-30px);
+}
+  
 	}
 
 	.ol-contact {
@@ -698,3 +702,4 @@ body {
   text-align: center;
   width: 100%;
 }
+
