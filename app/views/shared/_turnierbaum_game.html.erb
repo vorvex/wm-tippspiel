@@ -1,6 +1,5 @@
 <% if Game.find(gamenr) %>
 <% Game.where('id = ?', gamenr).each do |game|%>
-<h5 class="time_date"><%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></h5>
 <div class="game_container">
   <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
   <span class="team"><%= game.team_one.shortname %></span>
@@ -15,10 +14,10 @@
 <% end %>
 <% else %>
 <div class="game_container">
-  <%= image_tag('flags/' + '26bd' + '.png', :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
+  <!--<%= image_tag('flags/' + '26bd' + '.png', :class => 'flag', :size => '32x32', :style => 'display: inline') %>  -->
   <span class="team"><%= teamone %></span>
     <span class="game_before">- : -</span>
   <span class="team"><%= teamtwo %></span>
-  <%= image_tag('flags/' + '26bd' + '.png', :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
+  <!--  <%= image_tag('flags/' + '26bd' + '.png', :class => 'flag', :size => '32x32', :style => 'display: inline') %>  -->
 </div>
 <% end %>
