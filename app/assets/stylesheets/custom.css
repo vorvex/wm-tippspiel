@@ -393,6 +393,24 @@ body {
     display: none !important;
   } 
 }
+
+@media only screen and (max-width: 991px) {
+  #iframe {
+    display: none;
+  }
+  
+}
+@media only screen and (min-width: 992px) {
+  #iframe {  
+    height: 100%;
+    min-height: 734px;
+    width: 100%;
+    border-style: none;
+  }
+  .tb_games_container {
+    display: none;
+  }
+}
 @media (max-width: 500px){
 	  .ol-contact-container {
 		display: none;

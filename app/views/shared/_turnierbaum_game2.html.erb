@@ -1,14 +1,15 @@
 <% if Game.where('id = ?', gamenr).any? %>
 <% Game.where('id = ?', gamenr).each do |game|%>
+<h5 class="time_date">Spiel <%= 'gamenr' %> <%= game.gametime.strftime("%d.%m um %H:%M") %> in <%= game.stadium.city %></h5>
 <div class="game_container">
   <%= image_tag('flags/' + game.team_one.flag_url + '.png', :alt => game.team_one.country, :class => 'flag', :size => '32x32', :style => 'display: inline') %>  
-  <!-- <span class="team"><%= game.team_one.shortname %></span>  -->
+  <span class="team"><%= game.team_one.shortname %></span>
   <% if game.status === 'beendet' %>  
   <span class="game_ergebnis"><%= game.goals_team_one %> : <%= game.goals_team_two %></span>
   <% else %>
     <span class="game_before">- : -</span>
   <% end %>
-  <!-- <span class="team"><%= game.team_two.shortname %></span>  -->
+  <span class="team"><%= game.team_two.shortname %></span>
   <%= image_tag('flags/' + game.team_two.flag_url + '.png', :alt => game.team_two.country, :class => 'flag', :size => '32x32') %>
 </div>
 <% end %>
