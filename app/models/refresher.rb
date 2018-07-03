@@ -106,8 +106,8 @@ class Refresher
         losses = 0
         draws = 0
         @games.where("team_one = ? or team_two = ?", team.id, team.id).each do |game|
-          #puts "++++ game.winner.country = #{game.winner.country} ; team.country = #{team.country}"
-          wins += 1 if game.winner == team
+          #puts "++++ game.winner_is.country = #{game.winner_is.country} ; team.country = #{team.country}"
+          wins += 1 if game.winner_is == team
           losses += 1 if game.loser == team
           draws += 1 if game.is_draw?
         end

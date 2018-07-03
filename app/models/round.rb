@@ -9,16 +9,28 @@ class Round < ApplicationRecord
     @game = Game.find(game)
     if @game.goals_team_one > @game.goals_team_two
       @game.team_one
-    else
+    elsif @game.goals_team_one < @game.goals_team_two
       @game.team_two
+    else
+      if @game.winner == 1
+        return @game.team_one
+      elsif @game.winner == 2
+        return @game.team_two
+      end 
     end
   end
   def loser_game(game) 
     @game = Game.find(game)
     if @game.goals_team_one < @game.goals_team_two
       @game.team_one
-    else
+    elsif @game.goals_team_one > @game.goals_team_two
       @game.team_two
+    else
+      if @game.winner == 1
+        return @game.team_two
+      elsif @game.winner == 2
+        return @game.team_one
+      end
     end
   end
   

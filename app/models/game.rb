@@ -34,9 +34,15 @@ class Game < ApplicationRecord
     self.goals_team_one == self.goals_team_two
   end
 
-  def winner
-    return nil if is_draw?
+  def winner_is
     self.goals_team_one > self.goals_team_two ? self.team_one : self.team_two
+    if self.goals_team_one == self.goals_team_two
+      if self.winner == 1
+        return self.team_one
+      elsif self.winner == 2
+        return self.team_two
+      end
+    end
   end
 
 
